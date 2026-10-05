@@ -1,0 +1,1 @@
+import "./js/custom-font-icons.js";

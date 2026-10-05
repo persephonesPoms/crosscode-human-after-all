@@ -1,0 +1,20 @@
+{
+	"id": "human-after-all",
+	"version": "0.0.1",
+	"title": {
+		"en_US": "I'll Be Human After All."
+	},
+	"description": {
+		"en_US": "A post-game epilogue to CrossCode's A New Home DLC."
+	},
+	"icons": {
+		"24": "icon.png"
+	},
+	"repository": "https://github.com/persephonesPoms/crosscode-human-after-all",
+	"tags": [],
+	"authors": ["PerephonesPoms"],
+	"prestart": "prestart.js",
+	"poststart": "poststart.js",
+	"dependencies": {
+	}
+}
