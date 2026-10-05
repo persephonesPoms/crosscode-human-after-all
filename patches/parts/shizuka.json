@@ -1,0 +1,20 @@
+{
+    "haa-shockedBlushing": {
+        "srcX": 0,
+        "srcY": 0,
+        "width": 96,
+        "height": 56,
+        "destX": 0,
+        "destY": 32,
+        "img": "haa-shizuka"
+    },
+	"haa-blushRoll": {
+        "srcX": 0,
+        "srcY": 168,
+        "width": 96,
+        "height": 56,
+        "destX": 0,
+        "destY": 32,
+        "img": "haa-shizuka"
+    }
+}

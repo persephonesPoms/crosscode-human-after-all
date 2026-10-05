@@ -1,0 +1,20 @@
+{
+    "HAA_SHOCKED_BLUSHING": {
+        "faces": [
+            [
+                "straight",
+                "norm",
+                "haa-shockedBlushing"
+            ]
+        ]
+    },
+	"HAA_BLUSH_ROLL": {
+        "faces": [
+            [
+                "straight",
+                "toward",
+                "haa-blushRoll"
+            ]
+        ]
+    }
+}
