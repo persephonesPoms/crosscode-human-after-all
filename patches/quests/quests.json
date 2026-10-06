@@ -1,0 +1,73 @@
+{
+  "day-1": {
+    "mandatory": true,
+    "name": {
+      "en_US": "Day 1"
+    },
+    "person": {
+      "en_US": "Lea"
+    },
+    "level": 1,
+    "order": 0,
+    "description": {
+      "en_US": "You are excited to spend time with your friends today. There are a few people you particularly want to talk to."
+    },
+    "briefing": {
+      "en_US": "You had a good day."
+    },
+    "hiderewards": false,
+    "tasks": [
+      {
+        "task": {
+          "en_US": "Spend time with your friends."
+        },
+        "subtasks": [
+          {
+            "label": "shizuka",
+            "text": {
+              "en_US": "Talk to Shizuka"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "emilie",
+            "text": {
+              "en_US": "Talk to Emilie"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "luke",
+            "text": {
+              "en_US": "Talk to Luke"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "c'tron",
+            "text": {
+              "en_US": "Talk to C'tron"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "sergey",
+            "text": {
+              "en_US": "Contact Sergey"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "satoshi",
+            "text": {
+              "en_US": "Talk to Satoshi"
+            },
+            "type": "CONDITION"
+          }
+        ]
+      }
+    ],
+    "rewards": {},
+    "area": "evo-village"
+  }
+}
