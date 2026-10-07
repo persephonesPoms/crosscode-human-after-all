@@ -15,7 +15,7 @@
     "briefing": {
       "en_US": "You had a good day."
     },
-    "hiderewards": false,
+    "hiderewards": true,
     "tasks": [
       {
         "task": {
