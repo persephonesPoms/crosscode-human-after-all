@@ -56,11 +56,76 @@
               "en_US": "Contact Sergey"
             },
             "type": "CONDITION"
-          },
+          }
+        ]
+      }
+    ],
+    "rewards": {},
+    "area": "evo-village"
+  },
+  "my-sisters-keeper": {
+    "mandatory": true,
+    "name": {
+      "en_US": "My Sister's Keeper"
+    },
+    "person": {
+      "en_US": "Lea"
+    },
+    "level": 1,
+    "order": 1,
+    "description": {
+      "en_US": "Your sister doesn't see her own worth. You want to help her learn to appreciate herself for who she is."
+    },
+    "briefing": {
+      "en_US": "Your sister is still struggling to understand what good you see in her, but she promises she's going to try."
+    },
+    "hiderewards": true,
+    "tasks": [
+      {
+        "task": {
+          "en_US": "Help Shizuka value herself."
+        },
+        "subtasks": [
           {
-            "label": "satoshi",
+            "label": "shizuka",
             "text": {
-              "en_US": "Talk to Satoshi"
+              "en_US": "Continue spending time with your sister."
+            },
+            "type": "CONDITION"
+          }
+        ]
+      }
+    ],
+    "rewards": {},
+    "area": "evo-village"
+  },
+  "nothing-like-you": {
+    "mandatory": true,
+    "name": {
+      "en_US": "Nothing Like You"
+    },
+    "person": {
+      "en_US": "Lea"
+    },
+    "level": 1,
+    "order": 1,
+    "description": {
+      "en_US": "Shizuka doesn't believe she deserves good things. You're going to prove her wrong."
+    },
+    "briefing": {
+      "en_US": "Shizuka is still struggling to understand what good you see in her, but she promises she's going to try."
+    },
+    "hiderewards": true,
+    "tasks": [
+      {
+        "task": {
+          "en_US": "Help Shizuka value herself."
+        },
+        "subtasks": [
+          {
+            "label": "shizuka",
+            "text": {
+              "en_US": "Continue spending time with Shizuka."
             },
             "type": "CONDITION"
           }

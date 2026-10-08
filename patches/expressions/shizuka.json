@@ -16,5 +16,23 @@
                 "haa-blushRoll"
             ]
         ]
+    },
+	"HAA_SIDE_BLUSHING": {
+        "faces": [
+            [
+                "straight",
+                "toward",
+                "haa-sideBlush"
+            ]
+        ]
+    },
+	"HAA_BRIGHT_LAUGH": {
+        "faces": [
+            [
+                "straight",
+                "norm",
+                "haa-brightLaugh"
+            ]
+        ]
     }
 }

@@ -16,5 +16,23 @@
         "destX": 0,
         "destY": 32,
         "img": "haa-shizuka"
+    },
+	"haa-brightLaugh": {
+        "srcX": 0,
+        "srcY": 56,
+        "width": 96,
+        "height": 56,
+        "destX": 0,
+        "destY": 32,
+        "img": "haa-shizuka"
+    },
+	"haa-sideBlush": {
+        "srcX": 0,
+        "srcY": 280,
+        "width": 96,
+        "height": 56,
+        "destX": 0,
+        "destY": 32,
+        "img": "haa-shizuka"
     }
 }

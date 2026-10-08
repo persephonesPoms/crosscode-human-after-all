@@ -7,5 +7,24 @@
         "destX": 16,
         "destY": 40,
         "img": "haa-emilie"
+    },
+	"haa-pensiveBlushing": {
+        "srcX": 0,
+        "srcY": 168,
+        "width": 80,
+        "height": 56,
+        "destX": 16,
+        "destY": 40,
+        "img": "haa-emilie"
+    },
+	"haa-blushing": {
+        "srcX": 0,
+        "srcY": 224,
+        "width": 80,
+        "height": 56,
+        "destX": 16,
+        "destY": 40,
+        "img": "haa-emilie"
     }
+	
 }

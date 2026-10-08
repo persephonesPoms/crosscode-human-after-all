@@ -1,10 +1,28 @@
 {
-    "HAA-SHOCKED-BLUSHING": {
+    "HAA_SHOCKED_BLUSHING": {
         "faces": [
             [
                 "tired",
                 "norm",
                 "haa-shockedBlushing"
+            ]
+        ]
+    },
+	"HAA_PENSIVE_BLUSHING": {
+        "faces": [
+            [
+                "straight",
+                "away",
+                "haa-pensiveBlushing"
+            ]
+        ]
+    },
+	"HAA_BLUSHING": {
+        "faces": [
+            [
+                "straight",
+                "norm",
+                "haa-blushing"
             ]
         ]
     }
