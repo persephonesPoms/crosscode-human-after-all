@@ -10,4 +10,14 @@
 {
 	"type": "EXIT",
 	"count": 1
-}]
+},
+{"type": "ENTER",
+"index": "chapters"},
+{"type":"IMPORT","src":"mod:patches/chapters.json"},
+{"type":"EXIT","count":1}
+
+
+
+
+
+]
