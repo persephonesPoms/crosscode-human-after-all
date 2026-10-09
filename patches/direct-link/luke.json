@@ -1,0 +1,1659 @@
+[
+  {
+    "type": "SET_KEY",
+    "index": "luke-contact",
+    "content": {
+      "frequency": "ALWAYS",
+      "repeat": "REPEAT",
+      "eventType": "PARALLEL",
+      "overrideSideMessage": false,
+      "event": [
+        {
+          "outgoing": true,
+          "type": "RING_PRIVATE_MSG"
+        },
+        {
+          "type": "START_PRIVATE_MSG"
+        },
+        {
+          "side": "LEFT",
+          "order": 0,
+          "clearSide": false,
+          "type": "ADD_MSG_PERSON",
+          "person": {
+            "person": "main.luke",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "side": "RIGHT",
+          "order": 0,
+          "clearSide": false,
+          "type": "ADD_MSG_PERSON",
+          "person": {
+            "person": "main.lea",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "party.has.Luke && !location.isMapDungeon",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 18424,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/02/24]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Holerö, Lea!",
+                "de_DE": "Holerö, Lea!",
+                "zh_CN": "哈喽莉亚！<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "等等！！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "グーテンターク、レア！<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "안녕, 레아!<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18425
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Why the D-Link?\\. We're in a party, right?",
+                "de_DE": "Warum der D-Link?\\. Wir sind doch in einer Party?",
+                "zh_CN": "干嘛用直连呼叫我？\\.我们不是在队伍里了吗？<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "等等！！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "なんでダイレクトリンクなんだ？\n\\.俺たち同じパーティーの仲間だぜ？<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "왜 D-링크로 연락한 거야?\\. 우린 지금 같은 파티에 있잖아.<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18426
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WONDERING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "fr_FR": "fr_FR",
+                "zh_CN": "…<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18427,
+                "ja_JP": "...<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "...<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "…<<A<<[CHANGED 2021/02/24]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "MOPING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "type": "IF",
+          "condition": "plot.line >= 60000",
+          "thenStep": [
+            {
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              },
+              "message": {
+                "en_US": "Hi!"
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              },
+              "message": {
+                "en_US": "Hallo Lea!"
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "main.lea",
+                "expression": "SURPRISED_TOWARD"
+              },
+              "message": {
+                "en_US": "Where?"
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "main.luke",
+                "expression": "TOWARDS"
+              },
+              "message": {
+                "en_US": "You want to know where I am?"
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "type": "IF",
+              "withElse": true,
+              "condition": "location.currentMap == \"evo-village.center\"",
+              "thenStep": [
+                {
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "WHISTLING"
+                  },
+                  "message": {
+                    "en_US": "I can literally see you right now, you know."
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "MOPING"
+                  },
+                  "message": {
+                    "en_US": "..."
+                  },
+                  "type": "SHOW_MSG"
+                }
+              ],
+              "elseStep": [
+                {
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "EYES_CLOSED"
+                  },
+                  "message": {
+                    "en_US": "I'm at Homestedt right now, right outside city hall."
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "EXCITED"
+                  },
+                  "message": {
+                    "en_US": "Thanks!"
+                  },
+                  "type": "SHOW_MSG"
+                }
+              ]
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 48000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 16815,
+                "zh_CN": "你好！<<A<<[CHANGED 2020/06/17]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2020/06/17]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2020/06/17]",
+                "zh_TW": "你好！<<A<<[CHANGED 2020/06/15]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea!\\. How is it going?",
+                "de_DE": "Hey, Lea!\\. Wie geht's dir?",
+                "zh_CN": "嘿，莉亚！\\.近况如何？<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "嘿，莉亞！\\.近況如何？<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "よう、レア！\\.調子はどうだ？<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕, 레아!\\. 잘하고 있어?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17558
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "That was quite a cliffhanger right at the end of the dungeon, huh?",
+                "de_DE": "Das war ein ziemlicher Cliffhanger am Ende des Dungeons, was?",
+                "zh_CN": "地牢末尾那关子卖的，啧啧。你说是吧？<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "地牢末尾那關子賣的，嘖嘖。你說是吧？<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "あのダンジョンの最後、続きがすごく\n気になったよな！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "끝나기 바로 전에는 손에 땀을 쥐는 상황이었다, 그치?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17557
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "LAUGH"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "[點頭]<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2021/01/12]",
+                "langUid": 16816
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Well, I get the feeling we Evotars might play a key role for that new CrossWorlds expansion.",
+                "de_DE": "Tja, ich habe das Gefühl, dass wir Evotare eine Schlüsselrolle für diese neue CrossWorlds-Erweiterung spielen könnten.",
+                "zh_CN": "我觉得我们进化者在远星世界的新拓展内容里一定会扮演重要角色。<<A<<[CHANGED 2021/03/05]",
+                "zh_TW": "我覺得我們進化者在遠星世界的新拓展內容裡一定會扮演重要角色。<<A<<[CHANGED 2021/03/05]",
+                "ja_JP": "あのさ、新しいクロスワールドの拡張には\n俺たちエヴォターが鍵になってるんじゃ\nないかと思うんだ。<<A<<[CHANGED 2021/03/05]",
+                "ko_KR": "우리 에보타들이 새로운 크로스월드 확장 콘텐츠에서는 아주 중요한 역할을 해낼 것 같은 느낌이 들어.<<A<<[CHANGED 2021/03/05]",
+                "langUid": 17559
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I certainly hope so...\\. I'd like to have something like a job again!",
+                "de_DE": "Jedenfalls hoffe ich das sehr...\\. Ich würde gerne wieder so etwas wie einen Job haben!",
+                "zh_CN": "至少我是如此期待的...\\.感觉就像找到工作一样！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "至少我是如此期待的...\\.感覺就像找到工作一樣！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "そうだといいなって...\\.\nまた仕事的なものがほしいんだ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "정말 그러길 바라...\\. 다시 직업 같은 걸 가지고 싶거든!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17560
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "UP"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46400",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17561,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea!\\. Time for the new dungeon!",
+                "de_DE": "Hey, Lea!\\. Zeit, sich auf den neuen Dungeon vorzubereiten!",
+                "zh_CN": "莉亚！\\.准备打新地牢了！ <<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞！\\.準備打新地牢了！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "よう、レア！\\.新しいダンジョンだぜ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕, 레아!\\. 새로운 던전에 들어가 볼 시간이야!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17562
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "[點頭]<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17563
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "withElse": true,
+              "type": "IF",
+              "condition": "plot.line >= 46500",
+              "thenStep": [
+                {
+                  "message": {
+                    "en_US": "Guess you're just as busy running it as I am, right?",
+                    "de_DE": "Schätze, du bist genauso beschäftigt mit herumrennen wie ich, stimmt's?",
+                    "zh_CN": "哈，估计你也和我一样忙着呢吧？<<A<<[CHANGED 2021/02/24]",
+                    "zh_TW": "<<A<<[CHANGED 2021/02/24]",
+                    "ja_JP": "俺みたいに忙しく走り\n回ってんじゃねぇか？<<A<<[CHANGED 2021/02/24]",
+                    "ko_KR": "너도 나만큼 던전 도느라 바쁘구나?<<A<<[CHANGED 2021/02/24]",
+                    "langUid": 18353
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "WONDERING"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "Let's not waste any time!",
+                    "de_DE": "Lass uns keine Zeit verschwenden!",
+                    "zh_CN": "马上前去吧！<<A<<[CHANGED 2021/02/19]",
+                    "zh_TW": "<<A<<[CHANGED 2021/02/19]",
+                    "ja_JP": "早く攻略しよう！<<A<<[CHANGED 2021/02/09]",
+                    "ko_KR": "시간을 낭비하지 말자고!<<A<<[CHANGED 2021/02/16]",
+                    "langUid": 18351
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "DEFAULT"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "...!",
+                    "de_DE": "...!",
+                    "zh_CN": "...!<<A<<[CHANGED 2021/02/19]",
+                    "zh_TW": "<<A<<[CHANGED 2021/02/19]",
+                    "ja_JP": "…！<<A<<[CHANGED 2021/02/09]",
+                    "ko_KR": "...!<<A<<[CHANGED 2021/02/16]",
+                    "langUid": 18352
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "PROUD"
+                  }
+                }
+              ],
+              "elseStep": [
+                {
+                  "message": {
+                    "en_US": "Say, did you make sure to \\c[3]upgrade your equipment\\c[0]?",
+                    "de_DE": "Sag mal, hast du darauf geachtet, deine Ausrüstung \\c[3]aufzurüsten\\c[0]?",
+                    "zh_CN": "对了，你有\\c[3]升级你的装备\\c[0]吧？<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "對了，你有\\c[3]升級你的裝備\\c[0]吧？<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "なぁ、ちゃんと\\c[3]装備のアップグレード\\c[0]\nしたのか？<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "\\c[3]장비는 업그레이드\\c[0]했겠지?<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17564
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "WINK"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "...",
+                    "de_DE": "...",
+                    "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "...<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17565
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "EXHAUSTED"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "Seems like you've heard this advice quite a lot.",
+                    "de_DE": "Jetzt machst du ein Gesicht, als hättest du diesen Ratschlag schon öfter gehört.",
+                    "zh_CN": "哈，看来你经常听到这个建议。<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "哈，看來你經常聽到這個建議。<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "同じこと何回も言われてきたみたいだな。<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "이 조언은 꽤 여러 번 들었을 텐데.<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17566
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "LAUGH"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "[nods]",
+                    "de_DE": "[nickt]",
+                    "zh_CN": "[点头]<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "[點頭]<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "[うなずく]<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "[끄덕]<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17567
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "NOD"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "I mean...\\. it is really important!\\. And a lot of people keep forgetting about it.",
+                    "de_DE": "Ich meine...\\. Das ist echt wichtig!\\. Und viele Leute vergessen das immer wieder.",
+                    "zh_CN": "毕竟...\\.这确实很重要！\\.而且有很多人都会忘记。<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "畢竟...\\.這確實很重要！\\.而且有很多人都會忘記。<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "要は...\\.アップグレードは大切なんだ！\r\n\\.みんないつもそのことを忘れてるけどな。<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "아니...\\. 이건 정말 중요한 거야!\\. 그리고 대부분은 계속 까먹는다고.<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17568
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "WONDERING"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "That should be a lesson for Instatainment to keep in mind when designing future games.",
+                    "de_DE": "Das sollte Instatainment bei der Entwicklung künftiger Spiele im Hinterkopf behalten.",
+                    "zh_CN": "瞬时效应在以后设计游戏的时候应该记住这点。<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "暫態效應在以後設計遊戲的時候應該記住這點。<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "インスタテインメント社にとって、\n将来ゲームを作る時に、\n心に留めておくべき教訓さ。<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "인스타테인먼트가 다음 게임을 만들 때 염두에 둬야 하는 교훈이야.<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17569
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "WHISTLING"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46200",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17570,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea!\\. You want to tell me about the new dungeon?",
+                "de_DE": "Hey, Lea!\\. Willst du mir etwas über den neuen Dungeon erzählen?",
+                "zh_CN": "嘿，莉亚！\\.跟我说说新地牢呗？<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "嘿，莉亞！\\.跟我說說新地牢唄？<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ、レア！\\.新しいダンジョンのこと\r\n教えてくれないか？<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕, 레아!\\. 새 던전에 대해 얘기하고 싶니?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17571
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "SKEPTICAL"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...?",
+                "de_DE": "...?",
+                "zh_CN": "...?<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...?<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…？<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17572
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NERVOUS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Right, that would be hard for you to communicate.",
+                "de_DE": "Richtig, das wäre wohl etwas schwer für dich zu vermitteln.",
+                "zh_CN": "哦对，你交流有点困难。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "哦對，你交流有點困難。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "そっか、話すのが難しいんだったな。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "맞다, 넌 얘기하기가 어렵지.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17573
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WONDERING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Anyway, Emilie already told me.",
+                "de_DE": "Ich weiß schon, worum's geht. Emilie hat's mir schon gesagt.",
+                "zh_CN": "不过没事，艾米莉已经告诉我了。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "不過沒事，艾米莉已經告訴我了。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "エミリーが教えてくれたんだが…<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "아무튼, 에밀리가 이미 말해 줬어.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17574
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "TOWARDS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "And now everybody is meeting right here in Homestedt to discuss it.",
+                "de_DE": "Und jetzt treffen sich alle hier in Heimstatt, um darüber zu diskutieren.",
+                "zh_CN": "现在大家都在家原这讨论呢。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "現在大家都在家原這討論呢。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "ここ、ホームステッドに集まって\nこれから話し合うんだ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "그 얘기를 하기 위해 모두가 이곳 홈스테드에서 모일 거야.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17575
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WONDERING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46000",
+          "thenStep": [
+            {
+              "type": "SET_MSG_EXPRESSION",
+              "person": {
+                "person": "main.luke",
+                "expression": "PONDERING_NORM"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17839,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Urgh....",
+                "de_DE": "Örks...",
+                "zh_CN": "呃....<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "呃....<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "うっ....<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "윽...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17840
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "PONDERING_NORM"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...What?",
+                "de_DE": "...Was?",
+                "zh_CN": "...什么？<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...什麼？<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…なに？<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...뭐라고?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17841
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SURPRISED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Nothing...\\. Just had a bad night.",
+                "de_DE": "Ach, nichts...\\. Habe bloß schlecht geschlafen.",
+                "zh_CN": "没事...\\.就是昨晚过得不太好。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "沒事...\\.就是昨晚過得不太好。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "いや...\\.嫌な夜だったから。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "아니야...\\. 어제 잠을 잘 못 자서.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17842
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WORRIED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I dreamed some weird stuff...",
+                "de_DE": "Ich habe ganz komisches Zeug geträumt...",
+                "zh_CN": "梦到了些奇怪的东西...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "夢到了些奇怪的東西...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "変な夢を見たんだ...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "이상한 꿈을 꿨거든...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17843
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "SERIOUS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...?",
+                "de_DE": "...?",
+                "zh_CN": "...?<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...?<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…？<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17844
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NERVOUS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "You have those dreams as well, right?\\. The ones about your past?",
+                "de_DE": "Du hast doch auch solche Träume, oder?\\. Die über deine Vergangenheit?",
+                "zh_CN": "你也会的吧？\\.梦到你的过去？<<A<<[CHANGED 2021/03/05]",
+                "zh_TW": "你也會的吧？\\.夢到你的過去？<<A<<[CHANGED 2021/03/05]",
+                "ja_JP": "同じように悪夢を見たことがあるのか？\r\n\\.自分の過去についての夢とかか？<<A<<[CHANGED 2021/03/05]",
+                "ko_KR": "너도 그 꿈을 꾸지?\\. 네 과거에 관한 꿈?<<A<<[CHANGED 2021/03/05]",
+                "langUid": 17845
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "NORM_SERIOUS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "[點頭]<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17846
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Too bad they sometimes remind you of things you'd rather not remember.",
+                "de_DE": "Doof nur, dass sie einen manchmal an Dinge erinnern, an die man sich lieber nicht erinnern möchte.",
+                "zh_CN": "居然会被提醒不愿想起的东西。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "居然會被提醒不願想起的東西。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "本人が思い出したくないことまで\n思い出させてしまうなんてな。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "그것 때문에 기억하지 않아도 될 것까지 기억나기도 해.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17847
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WORRIED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...What?",
+                "de_DE": "...Was?",
+                "zh_CN": "...什么？<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...什麼？<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…なに？<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...뭐라고?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17848
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NERVOUS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Honestly, it's something I'd rather not talk about now.",
+                "de_DE": "Ehrlich gesagt, möchte ich darüber jetzt lieber nicht reden.",
+                "zh_CN": "老实说我现在不想谈这个。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "老實說我現在不想談這個。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "正直なとこ、今はその話をしたくない。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "음, 지금은 할 얘기가 아닌 것 같아.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17849
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "PONDERING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Let's just say I had my fair share of trouble with...\\. some people.",
+                "de_DE": "Sagen wir einfach, ich hatte einigen Ärger mit...\\. einigen Leuten.<<A<<[CHANGED 2021/05/22]",
+                "zh_CN": "这么说吧...\\.我和某些人有过一段故事。<<A<<[CHANGED 2021/05/22]",
+                "zh_TW": "這麼說吧...\\.我和某些人有過一段故事。<<A<<[CHANGED 2021/05/22]",
+                "ja_JP": "言えるのは、俺は何人かとかなりの\nトラブルになった...\\.ぐらいかな。<<A<<[CHANGED 2021/05/22]",
+                "ko_KR": "그냥...\\. 어떤 사람과의 문제에서 내 몫을 다 했다고 하자.<<A<<[CHANGED 2021/05/07]",
+                "langUid": 17850
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WORRIED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Now that I think about it...\\. it's quite the plus I won't have to deal with them anymore here in CrossWorlds.",
+                "de_DE": "Jetzt, wo ich darüber nachdenke...\\. ist es schwer von Vorteil, dass ich mich hier in CrossWorlds nicht mehr mit ihnen beschäftigen muss.",
+                "zh_CN": "现在想来...\\.我在远星世界，不用再和他们打交道是件好事。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "現在想來...\\.我在遠星世界，不用再和他們打交道是件好事。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "そのことを考えると...\\.ここではこれ以上\nその問題に対処しなくていいってのは\nかなりうれしいことだな。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "생각해 보니...\\. 여기 크로스월드에서 그들과 더 이상 부딪치지 않아도 돼서 다행이네.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17851
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WONDERING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "[點頭]<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17852
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Compared to that, the people I know here are all quite nice, really.",
+                "de_DE": "Im Vergleich dazu sind die Leute, die ich hier kenne, wirklich alle sehr nett.",
+                "zh_CN": "和他们相比，我在这里认识的人都好多了。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "和他們相比，我在這裡認識的人都好多了。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "それと比べ、ここの人たちはみんなホント\nいい人だよなぁ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "그와 반대로, 이곳에서 내가 아는 사람들은 정말 좋아.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17853
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "EYES_CLOSED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Especially you, my lovely neighbor!",
+                "de_DE": "Besonders du, meine liebe Nachbarin!",
+                "zh_CN": "尤其是你，我可爱的邻居！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "尤其是你，我可愛的鄰居！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "特にレア、俺の愛すべきお隣さん！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "특히 너 말이야, 내 사랑스러운 이웃!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17854
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WINK"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...!<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17855
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "CHARMED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 45000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17576,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hallihallo!",
+                "de_DE": "Hallihallo!",
+                "zh_CN": "哈喽哈喽！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "哈嘍哈嘍！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "よう！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17577
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Junge, I'm exhausted...",
+                "de_DE": "Boah, Junge, bin ich erledigt...",
+                "zh_CN": "唉，我快累死了...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "唉，我快累死了...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "まったく、ヘトヘトなんだよ…<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "끄응, 피곤하군...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17578
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "COMPLAINING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I've certainly seen enough sand for the day.",
+                "de_DE": "Für heute habe ich wirklich genug Sand gesehen.",
+                "zh_CN": "今天一天可是看够沙子了。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "今天一天可是看夠沙子了。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "今日は砂ばっかりでさ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "평생 볼 모래를 오늘 다 본 것 같아.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17579
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "SKEPTICAL"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It was fun, though.",
+                "de_DE": "Aber hat Spaß gemacht.",
+                "zh_CN": "不过蛮好玩的就是了。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "不過蠻好玩的就是了。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "楽しかったけどな。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "그래도 재미는 있었어.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17580
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "EYES_CLOSED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "[點頭]<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17581
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "That duel at the end was quite the show as well.",
+                "de_DE": "Und das Duell am Ende war auch richtig klasse.",
+                "zh_CN": "而且最后那场决斗也很有意思。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "而且最後那場決鬥也很有意思。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "最後の決闘はかなり見ものだったな。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "마지막의 그 대결도 꽤 볼 만했고 말이야.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17582
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 44400",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17583,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hallihallo!",
+                "de_DE": "Hallihallo!",
+                "zh_CN": "哈喽哈喽！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "哈嘍哈嘍！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "ヤッホー！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17584
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "That sure was a lot of noise this morning, with that green-haired guy screaming around...",
+                "de_DE": "Das war ganz schön laut heute Morgen, mit diesem grünhaarigen Kerl, der herumgeschrien hat...",
+                "zh_CN": "今天早上那个青草头可是够闹腾的...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "今天早上那個青草頭可是夠鬧騰的...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "今朝は緑の髪のヤツが叫んでて\r\nすごくうるさかったな...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "아침부터 초록 머리 녀석이 소리를 지르고 다니다니, 시끄러워 죽는 줄 알았네...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17585
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WONDERING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "[點頭]<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17586
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Also doesn't help that the houses seem to have pretty bad insulation...",
+                "de_DE": "Unsere Häuschen hier scheinen ziemlich schlecht isoliert zu sein...",
+                "zh_CN": "而且我们的房子隔音不好，更是遭了重了...<<A<<[CHANGED 2021/03/05]",
+                "zh_TW": "而且我們的房子隔音不好，更是遭了重了...<<A<<[CHANGED 2021/03/05]",
+                "ja_JP": "家の壁がしっかりしてないんだもんな...<<A<<[CHANGED 2021/03/05]",
+                "ko_KR": "게다가 방음도 잘 안 돼서 도움이 안 되고...<<A<<[CHANGED 2021/03/05]",
+                "langUid": 17587
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WHISTLING"
+              }
+            },
+            {
+              "withElse": false,
+              "type": "IF",
+              "condition": "maps.evoVillage/interior/leaUpper.musicOn",
+              "thenStep": [
+                {
+                  "message": {
+                    "en_US": "That's why I can hear every single note of that music playing from your house.",
+                    "de_DE": "Deshalb kann ich jede einzelne Note der Musik hören, die in deinem Haus gespielt wird.",
+                    "zh_CN": "你房间里的音乐我可是都能听到。<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "你房間裡的音樂我可是都能聽到。<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "だからお前んちから流れる音楽も\nはっきり聞こえる。<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "그래서 네 집에서 나는 음악 소리 하나하나가 다 들려.<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17588
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "COMPLAINING"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "You know?\\. The one that's playing.\\. \\c[3]Right now\\c[0].",
+                    "de_DE": "Zum Beispiel die, die \\c[3]jetzt gerade\\c[0] läuft.",
+                    "zh_CN": "你知道吧？\\.就是...\\. \\c[3]现在\\c[0]在播的那首。<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "你知道吧？\\.就是...\\.\\c[3]現在\\c[0]在播的那首。<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "知ってた？\\. \\c[3]ちょうど今\\c[0]\n\\.聞いてるヤツさ。<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "\\c[3]지금\\c[0] 나는 저 소리 말이야.<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17589
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.luke",
+                    "expression": "PISSED"
+                  }
+                },
+                {
+                  "message": {
+                    "en_US": "...!",
+                    "de_DE": "...!",
+                    "zh_CN": "...!<<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "...!<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "…！<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "...!<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17590
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "WHISTLING"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 42000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17591,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Good morning, Lea!",
+                "de_DE": "Guten Morgen, Lea!",
+                "zh_CN": "早上好，莉亚！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "早上好，莉亞！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "レア、おはよう！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "좋은 아침, 레아!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17592
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "We're all waiting in \\c[3]Para Island\\c[0]!\\. The raid will start soon!",
+                "de_DE": "Wir warten alle auf der \\c[3]Para-Insel\\c[0]!\\. Der Raid geht gleich los!",
+                "zh_CN": "我们都在\\c[3]帕拉岛\\c[0]等着呢。\\.副本活动很快就要开始了！ <<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "我們都在\\c[3]帕拉島\\c[0]等著呢。\\.副本活動很快就要開始了！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "みんな\\c[3]パラ島\\c[0]で待ってるぜ！\r\n\\.もうすぐレイドが始まる！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "우린 \\c[3]파라 섬\\c[0]에서 기다리고 있어!\\. 곧 레이드가 시작될 거야!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17593
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "UP"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 41700",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17594,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hello!",
+                "de_DE": "Hallo!",
+                "zh_CN": "哈喽！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "哈嘍！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "よう！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17595
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I'm currently spending some quality time in my own personal garden.",
+                "de_DE": "Ich verbringe gerade etwas Qualitätszeit in meinem Garten.",
+                "zh_CN": "我正在我的花园里摆弄花草呢。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "我正在我的花園裡擺弄花草呢。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "今は自宅の庭でのんびり時間を\r\n過ごしているよ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "난 지금 내 개인 정원에서 좋은 시간을 보내고 있어.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17596
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "EYES_CLOSED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...!<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17597
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ASTONISHED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I honestly never expected to own a house like that.",
+                "de_DE": "Ich hätte ehrlich gesagt nie gedacht, dass ich jemals so ein Haus besitzen werde.",
+                "zh_CN": "我真没想到会拥有一栋房子。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "我真沒想到會擁有一棟房子。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "正直、自分がこんな家を持つなんて\r\n考えたことなかったよ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "솔직히 내가 이런 집을 갖게 될 줄은 몰랐네.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17598
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WONDERING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Though...\\. I'm not perfectly sure if I really \"own\" anything in this CrossWorlds.",
+                "de_DE": "Wobei ich mir nicht ganz sicher bin, ob ich in CrossWorlds wirklich irgendetwas \"besitze\"...",
+                "zh_CN": "不过...\\.我不知道我在远星世界是不是真的“拥有”什么财产。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "不過...\\.我不知道我在遠星世界是不是真的“擁有”什麼財產。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "まぁ...\\.クロスワールドで俺が本当に\r\n何かを「持つ」ってことがあるのかどうか\r\nすらわからないけどな。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "하지만...\\. 이 크로스월드에서 정말 무언가를 \"소유\"하고 있는 게 맞긴 한 걸까?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17599
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WHISTLING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17600
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "THINKING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 40000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17601,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hello!",
+                "de_DE": "Hallo!",
+                "zh_CN": "哈喽！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "哈嘍！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やほー！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17602
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It's good to see that D-Links seem to work again.",
+                "de_DE": "Schön zu sehen, dass der D-Link wieder funktioniert.",
+                "zh_CN": "直连能用真是太好了。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "直連能用真是太好了。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "ダイレクトリンクが復活してよかったよ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "D-링크가 다시 제대로 작동하는 것 같아 다행이야.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17603
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "UP"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It was pretty frustrating not being able to contact anyone in Vermillion Wasteland...",
+                "de_DE": "Das war nämlich ziemlich frustrierend, als wir in der Einöde niemanden kontaktieren konnten...",
+                "zh_CN": "之前在赤红废土联系不上别人就很烦...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "之前在赤紅廢土聯繫不上別人就很煩...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "朱染の荒地にいるときはみんなと連絡が取れなくて\r\nけっこう面倒だったんだ...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "주홍의 황무지에서 아무와도 연락할 수 없었을 땐 당황스러웠거든...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17604
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WORRIED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17605
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NERVOUS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Honestly...\\. almost everything was rather frustrating about that place.",
+                "de_DE": "Eigentlich...\\. war so ziemlich alles an diesem Ort frustrierend.",
+                "zh_CN": "老实说...\\.这地方几乎所有东西都很烦。 <<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "老實說...\\.這地方幾乎所有東西都很煩。<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "正直言うと...\\.あそこのことは何でも\n面倒なんだけどさ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "솔직히...\\. 그 장소는 뭐든 당황스러웠지.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17606
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "COMPLAINING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Well...\\. except for you showing up, of course.",
+                "de_DE": "Na ja...\\. Außer natürlich, dass ich dich dort getroffen habe.",
+                "zh_CN": "呃...\\.当然，除了你的出现。<<A<<[CHANGED 2021/03/05]",
+                "zh_TW": "呃...\\.當然，除了你的出現。<<A<<[CHANGED 2021/03/05]",
+                "ja_JP": "まぁ...\\.もちろん\nレアが現れたこと以外は、な。<<A<<[CHANGED 2021/03/05]",
+                "ko_KR": "뭐...\\. 네가 나타난 것도 그렇고.<<A<<[CHANGED 2021/03/05]",
+                "langUid": 17607
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.luke",
+                "expression": "WHISTLING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17608
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "CHARMED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "message": {
+            "en_US": "Hi!",
+            "de_DE": "Hi!",
+            "fr_FR": "fr_FR",
+            "langUid": 17609,
+            "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+            "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+            "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+            "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.lea",
+            "expression": "EXCITED"
+          }
+        },
+        {
+          "message": {
+            "en_US": "Hello!",
+            "de_DE": "Hallo!",
+            "zh_CN": "哈喽！<<A<<[CHANGED 2021/01/12]",
+            "zh_TW": "哈嘍！<<A<<[CHANGED 2021/01/12]",
+            "ja_JP": "やほー！<<A<<[CHANGED 2021/01/12]",
+            "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+            "langUid": 17610
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.luke",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "name": "end",
+          "type": "LABEL"
+        },
+        {
+          "skipSounds": false,
+          "type": "END_PRIVATE_MSG"
+        }
+      ],
+      "loopCount": 1,
+      "type": {
+        "member": "Luke",
+        "actionType": "CONTACT",
+        "type": "SOCIAL_ACTION"
+      }
+    }
+  }
+]

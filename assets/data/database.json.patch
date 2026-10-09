@@ -14,8 +14,16 @@
 {"type": "ENTER",
 "index": "chapters"},
 {"type":"IMPORT","src":"mod:patches/chapters.json"},
-{"type":"EXIT","count":1}
+{"type":"EXIT","count":1},
 
+{"type": "ENTER","index": "commonEvents"},
+{"type":"INCLUDE","src":"mod:patches/direct-link/luke.json"},
+{"type":"INCLUDE","src":"mod:patches/direct-link/emilie.json"},
+{"type":"INCLUDE","src":"mod:patches/direct-link/shizuka.json"},
+{"type":"INCLUDE","src":"mod:patches/direct-link/ctron.json"},
+{"type":"INCLUDE","src":"mod:patches/direct-link/apollo.json"},
+{"type":"INCLUDE","src":"mod:patches/direct-link/buggy.json"},
+{"type":"EXIT","count":1}
 
 
 

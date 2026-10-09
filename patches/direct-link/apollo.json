@@ -1,0 +1,1858 @@
+[
+  {
+    "type": "SET_KEY",
+    "index": "apollo-contact",
+    "content": {
+      "frequency": "ALWAYS",
+      "repeat": "REPEAT",
+      "eventType": "PARALLEL",
+      "overrideSideMessage": false,
+      "event": [
+        {
+          "outgoing": true,
+          "type": "RING_PRIVATE_MSG"
+        },
+        {
+          "type": "START_PRIVATE_MSG"
+        },
+        {
+          "side": "LEFT",
+          "order": 0,
+          "clearSide": false,
+          "type": "ADD_MSG_PERSON",
+          "person": {
+            "person": "antagonists.fancyguy",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "side": "RIGHT",
+          "order": 0,
+          "clearSide": false,
+          "type": "ADD_MSG_PERSON",
+          "person": {
+            "person": "main.lea",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "party.has.Apollo && !location.isMapDungeon",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14773,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hold it!!",
+                "de_DE": "Moment mal!!",
+                "zh_CN": "等等！！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "ちょっと待て！！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "잠깐!!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14774,
+                "zh_TW": "等等！！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "POINTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...?!",
+                "de_DE": "...?!",
+                "zh_CN": "...?!<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...？！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...?!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14775,
+                "zh_TW": "...?!<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SHOCKED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Why would you use a D-Link when we're in a party, standing right next to each other?",
+                "de_DE": "Warum willst du einen D-Link benutzen, wenn wir in einer Party sind und direkt nebeneinander stehen?",
+                "zh_CN": "我们明明就在一个小队里，面对面，你为什么还要直连我？<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "同じパーティーに入っていて\nすぐそばにいるのに、なぜわざわざ\nダイレクトリンクを使うんだ？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "우린 지금 같은 파티에 있고, 바로 옆에 서 있는데 왜 굳이 D-링크를 쓰는 거지?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14776,
+                "zh_TW": "我們明明就在一個小隊裡，面對面，你為什麼還要直連我？<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "ANGRY"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14777,
+                "zh_TW": "...<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ANNOYED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "type": "IF",
+          "condition": "plot.line >= 60000",
+          "thenStep": [
+            {
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              },
+              "message": {
+                "en_US": "Sphereomancer Lea!"
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "CONTENT"
+              },
+              "message": {
+                "en_US": "It is good to hear from you."
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              },
+              "message": {
+                "en_US": "Hi!"
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "main.lea",
+                "expression": "SURPRISED_AWAY"
+              },
+              "message": {
+                "en_US": "Where?"
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              },
+              "message": {
+                "en_US": "I am currently located in the First Scholars HQ."
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "PONDERING"
+              },
+              "message": {
+                "en_US": "If you would like to meet me here, I certainly would not mind."
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DOWN"
+              },
+              "message": {
+                "en_US": "My present company is..."
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              },
+              "message": {
+                "en_US": "Not ideal."
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "type": "SHOW_OFFSCREEN_MSG",
+              "side": "LEFT",
+              "message": {
+                "en_US": "I can hear you!",
+                "de_DE": "",
+                "ja_JP": "",
+                "ko_KR": "",
+                "zh_CN": "",
+                "zh_TW": ""
+              }
+            },
+            {
+              "person": {
+                "person": "main.lea",
+                "expression": "SMILE"
+              },
+              "message": {
+                "en_US": "..."
+              },
+              "type": "SHOW_MSG"
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 48000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14778
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea!",
+                "de_DE": "Spheromancer Lea!",
+                "zh_CN": "气圆使者莉亚！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "スフィロマンサーのレア！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "원술사 레아!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17462
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It looks like Project Trackwalker will soon move to a whole new world!",
+                "de_DE": "Es sieht so aus, als würde Operation Pfadläufer bald in eine ganz neue Welt übergehen!",
+                "zh_CN": "看起来先祖之路行者计划将很快前去新的世界！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "トラックウォーカープロジェクトは\r\nすぐにでも新たな地で開始する予定のようだ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "트랙 워커 프로젝트가 곧 새로운 세상으로 옮겨지는가 보더군!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17447
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "However, I'm afraid there is still much injustice left in this world that needs to be dealt with!",
+                "de_DE": "Und doch gibt es noch viel Ungerechtigkeit in dieser Welt, die beseitigt werden muss!",
+                "zh_CN": "可是，这个世界依然还有很多不公未能解决！<<A<<[CHANGED 2021/02/26]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/02/26]",
+                "ja_JP": "だがあいにく、この世界にはまだ\r\n対処すべき不正がごまんと残っている！<<A<<[CHANGED 2021/02/26]",
+                "ko_KR": "하지만, 이 세상엔 아직 바로잡아야 할 불의가 남아 있다!<<A<<[CHANGED 2021/02/26]",
+                "langUid": 17448
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "SHOUTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "If you want to join forces to fight for justice, let me know!",
+                "de_DE": "Wenn du dich zusammentun willst, um für Gerechtigkeit zu kämpfen, lass es mich wissen!",
+                "zh_CN": "如果你打算加入正义的事业，就来找我吧！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "正義のために戦う気があるなら\n連絡をくれ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "정의를 위한 싸움에 동참하고 싶다면 알려 주도록!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17449
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Lea!",
+                "de_DE": "Lea!",
+                "zh_CN": "莉亚！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "レア！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "레아!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17450
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "PROUD"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46400",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17451
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "withElse": true,
+              "type": "IF",
+              "condition": "plot.line >=  46500",
+              "thenStep": [
+                {
+                  "message": {
+                    "en_US": "Spheromancer Lea!\\. The final temple has opened!",
+                    "de_DE": "Spheromancer Lea!\\. Der letzte Tempel wurde geöffnet!",
+                    "zh_CN": "气圆使者莉亚！\\.最终神殿已经开启！<<A<<[CHANGED 2021/02/19]",
+                    "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/02/19]",
+                    "ja_JP": "スフィロマンサーのレア！\n\\.最後の神殿が開放された！<<A<<[CHANGED 2021/02/09]",
+                    "ko_KR": "원술사 레아! 이제 저 탑에 정의를 실현하는 건 네게 달렸다!<<A<<[CHANGED 2021/02/16]",
+                    "langUid": 18350
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "antagonists.fancyguy",
+                    "expression": "DEFAULT"
+                  }
+                }
+              ],
+              "elseStep": [
+                {
+                  "message": {
+                    "en_US": "Spheromancer Lea!\\. The final temple will be open soon!",
+                    "de_DE": "Spheromancer Lea!\\. Der letzte Tempel wird bald geöffnet!",
+                    "zh_CN": "气圆使者莉亚！\\.最终地牢将很快开启！ <<A<<[CHANGED 2021/01/12]",
+                    "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                    "ja_JP": "スフィロマンサーのレア！\n\\.最後の神殿が間もなく開くぞ！<<A<<[CHANGED 2021/01/12]",
+                    "ko_KR": "원술사 레아!\\. 마지막 사원이 곧 열린다!<<A<<[CHANGED 2021/01/12]",
+                    "langUid": 17452
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "antagonists.fancyguy",
+                    "expression": "DEFAULT"
+                  }
+                }
+              ]
+            },
+            {
+              "message": {
+                "en_US": "Running it might very well be our most important moment as Seekers so far!",
+                "de_DE": "Es könnte sehr gut sein, dass dies unser bisher wichtigster Moment als Seeker ist!",
+                "zh_CN": "完成它会是我们作为探索者最重要的时刻！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "神殿を踏破することこそが、\n探索者としての我々の\n最も大切な瞬間なのだ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "시커로서 지금까지 중 가장 중요한 순간이 되겠지!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17453
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "We have to show everyone that we Spheromancers, the most honorable class of all, will be at the very front of this endeavor!!",
+                "de_DE": "Wir müssen allen zeigen, dass wir Spheromancer, die ehrenwerteste Klasse von allen, bei diesem Unterfangen ganz vorne mit dabei sein werden!!",
+                "zh_CN": "我们必须向所有人证明，我们，最荣耀的气圆使者职业，会首先打通这个地牢！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "最も高貴なクラス、スフィロマンサーである\n俺たちがこの取り組みの最前線にいる\nことを見せつけなければならない！！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "가장 명예로운 클래스인 우리 원술사들이 가장 앞서나가는 모습을 보여주지 않을 수 없다!!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17454
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "POINTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17455
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17456
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea!\\. I'm currently busy investigating certain rumors I've heard about CrossWorlds.",
+                "de_DE": "Spheromancer Lea!\\. Ich bin derzeit damit beschäftigt, bestimmte Gerüchte zu untersuchen, die ich über CrossWorlds gehört habe.",
+                "zh_CN": "气圆使者莉亚！\\.我现在正忙着调查一个关于远星世界的谣言。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "スフィロマンサーのレア！\\.俺は今\nクロスワールドのある噂について\n調べていて忙しいんだ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "원술사 레아!\\. 난 지금 크로스월드에 관한 소문을 조사하느라 바빠.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17457
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "ANGRY"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I'll tell you more, as soon as my sources have been confirmed!",
+                "de_DE": "Ich werde dir mehr erzählen, sobald meine Quellen bestätigt wurden!",
+                "zh_CN": "等我有了确切的成果会告诉你的！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "情報が正しいかはっきりしたら\nすぐにお前にも伝えるぞ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "정보가 확실시되고 나면 더 많은 걸 말해 주지!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17458
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...?",
+                "de_DE": "...?",
+                "zh_CN": "...?<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…？<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...?<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17459
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ASTONISHED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 44400",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17460
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea!",
+                "de_DE": "Spheromancer Lea!",
+                "zh_CN": "气圆使者莉亚！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "スフィロマンサーのレア！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "원술사 레아!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17461
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "SHOUTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It has been a long time since our last duel.",
+                "de_DE": "Seit unserem letzten Duell ist einige Zeit vergangen.",
+                "zh_CN": "距离我们上次决斗已经过去了很久。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "最後に決闘してからずいぶん経つな。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "마지막 대결 이후 오랜만에 보는군.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 14779
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "And I made the most out of that time!",
+                "de_DE": "Und ich habe die Zeit bestmöglich genutzt!",
+                "zh_CN": "这段时间我没有丝毫松懈！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "あれからできる限りのことをしたさ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "그리고 난 그때 이후로 만반의 준비를 갖췄지!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17463
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "CONTENT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "By developing the ultimate strategy for our upcoming duel!!",
+                "de_DE": "Indem ich die ultimative Strategie für unser bevorstehendes Duell entwickelt habe!!",
+                "zh_CN": "我已经开发出了究极战术！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "来たる次の決闘に向け、究極の戦略を\r\n準備してな！！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "다가올 우리의 대결을 위한 궁극의 전략을 짜면서 말이야!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17464
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "POINTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...?!",
+                "de_DE": "...?!",
+                "zh_CN": "...?!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "…？！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...?!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17465
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SHOCKED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Make sure you're well prepared!",
+                "de_DE": "Sorge dafür, dass du angemessen vorbereitet bist!",
+                "zh_CN": "做好准备吧！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "お前も準備万端だろう？！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "준비되었기를 바란다!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17466
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "SHOUTING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 30000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 17467,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! It is now up to you to serve justice in that tower!",
+                "de_DE": "Spheromancer Lea! Es ist jetzt an dir, Gerechtigkeit in diesem Turm walten zu lassen!",
+                "zh_CN": "气圆使者莉亚！是时候执行正义了！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "スフィロマンサーのレア！今こそあの塔に\n正義をもたらすときだ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "원술사 레아! 이제 저 탑에 정의를 실현하는 건 네게 달렸다!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17468,
+                "zh_TW": "氣圓使者莉亞！現在你將在那座塔裡執行正義！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "POINTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I know you can do it! Make a fellow Spheromancer proud!",
+                "de_DE": "Ich weiß, dass du es schaffst! Mach diesen Spheromancer stolz!",
+                "zh_CN": "你能做到的！不要丢我们气圆使者的脸！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "お前ならできる！この俺に、\nスフィロマンサーとしての誇りを見せろ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "넌 할 수 있어! 자랑스러운 원술사가 되라고!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14780,
+                "zh_TW": "你能做到的！不要丟我們氣圓使者的臉！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14781,
+                "zh_TW": "...!<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "PROUD"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 27000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14782,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "No time for chit-chat now, Spheromancer Lea!",
+                "de_DE": "Keine Zeit für Plaudereien, Spheromancer Lea!",
+                "zh_CN": "没时间闲聊了，气圆使者莉亚！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "世間話をしているヒマはないぞ、\nスフィロマンサーのレア！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "지금은 수다 떨 시간 없어, 원술사 레아!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14783,
+                "zh_TW": "沒時間閒聊了，氣圓使者莉亞！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "SHOUTING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 25000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14784,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! Let's make haste and enter Vermillion Wasteland as soon as possible! There is justice that needs serving!",
+                "de_DE": "Spheromancer Lea! Beeilen wir uns und stürmen die Vermilloneinöde so bald wie möglich! Der Gerechtigkeit ist noch nicht Genüge getan!",
+                "zh_CN": "气圆使者莉亚！我们赶紧进入朱红废土，那里还有正义等待我们伸张！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア！\nさあ、できる限り急いで朱染の荒地へ\n向かうぞ！かの地に正義を下さなければ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아! 최대한 빨리 주홍의 황무지에 들어가자! 그곳엔 우리가 실현해야 할 정의가 있어!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14785,
+                "zh_TW": "氣圓使者莉亞！我們快點進入朱紅廢土，那裡還有正義等待我們伸張！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "SHOUTING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 19250",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14798,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! Do you enjoy exploring \\c[3]Rhombus Square\\c[0]?",
+                "de_DE": "Spheromancer Lea! Gefällt dir \\c[3]Rhombus Square\\c[0]?",
+                "zh_CN": "气圆使者莉亚！探索\\c[3]罗姆布斯广场\\c[0]开心吗?<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア！\n\\c[3]ロンバス広場\\c[0]の探索は楽しんでいるか？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아! \\c[3]마름모 광장\\c[0]은 잘 탐험하고 있나?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14799,
+                "zh_TW": "氣圓使者莉亞！探索\\c[3]羅姆布斯廣場\\c[0]開心嗎?<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I recommend checking out the \\c[3]Area Booster Store\\c[0].",
+                "de_DE": "Ich empfehle einen Besuch in der \\c[3]Booster Lounge\\c[0].",
+                "zh_CN": "我推荐你去看看\\c[3]区域升级品商店\\c[0]。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "\\c[3]エリアブースターの店\\c[0]を\n見ておくことを進めるぞ。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "\\c[3]지역 부스터 상점\\c[0]을 확인해보는 걸 추천하지.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14800,
+                "zh_TW": "我推薦你去看看\\c[3]區域升級品商店\\c[0]。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It's the key to further expand your Spheromancer potential!",
+                "de_DE": "Das ist der Schlüssel zur weiteren Entfaltung deines Potentials als Spheromancer!",
+                "zh_CN": "那里是进一步开发你气圆使者潜能的关键！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーの可能性を\nさらに広げるカギになるからな！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "그게 네 원술사의 잠재력을 더욱 확장할 수 있는 열쇠가 될 거다!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14801,
+                "zh_TW": "那裡是進一步開發你氣圓使者潛能的關鍵！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "CONTENT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "....!",
+                "de_DE": "....!",
+                "zh_CN": "....!<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "....!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14802,
+                "zh_TW": "....!<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ASTONISHED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Now, as for our next duel...",
+                "de_DE": "Was unser nächstes Duell betrifft...",
+                "zh_CN": "至于我们的下一场决斗...<<A<<[CHANGED 2019/08/16]",
+                "ja_JP": "さて、次の決闘についてだが...<<A<<[CHANGED 2019/08/16]",
+                "ko_KR": "자, 그럼 우리의 다음 결투는...<<A<<[CHANGED 2019/08/16]",
+                "langUid": 14803,
+                "zh_TW": "至於我們的下一場決鬥...<<A<<[CHANGED 2019/08/16]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!!",
+                "de_DE": "...!!",
+                "zh_CN": "...!!<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...！！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...!!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14804,
+                "zh_TW": "...!!<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SHOCKED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Wait!",
+                "de_DE": "Warte!",
+                "zh_CN": "等等！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "待って！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "잠깐!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14805,
+                "zh_TW": "等等！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NERVOUS"
+              }
+            },
+            {
+              "message": {
+                "en_US": "What? Yes, actually that is what I just wanted to say.",
+                "de_DE": "Was? Ja, genau das wollte ich eigentlich gerade sagen.",
+                "zh_CN": "嗯？哦，我想说的就是这个。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "なんだ？まあ、俺もそう言おうと\nしていたところだが。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "뭐? 아, 사실 그게 내가 하고 싶은 말이었어.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14806,
+                "zh_TW": "嗯？哦，我想說的就是這個。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "MOPING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I still need some time myself to prepare for our next duel.",
+                "de_DE": "Ich brauche noch etwas Zeit, um mich auf unser nächstes Duell vorzubereiten.",
+                "zh_CN": "我需要点时间准备一下才能进行下一场决斗。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "次の決闘までに、俺もまだ\n準備する時間が必要だからな。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "다음 결투를 준비하려면 아직 시간이 필요하거든.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14807,
+                "zh_TW": "我需要點時間準備一下才能進行下一場決鬥。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I will let you know when I'm ready.",
+                "de_DE": "Ich lasse dich wissen, wenn ich bereit bin.",
+                "zh_CN": "准备好了会告诉你的。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "準備ができたら連絡する。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "준비되면 말해주도록 하지.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14808,
+                "zh_TW": "準備好了會告訴你的。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14809,
+                "zh_TW": "...<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXHAUSTED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 19200 && plot.line < 19250",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14810,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! We're waiting for you inside of \\c[3]CrossCentral\\c[0]! Make haste!",
+                "de_DE": "Spheromancer Lea! Wir warten in der \\c[3]CrossCentral\\c[0] auf dich! Spute dich!",
+                "zh_CN": "气圆使者莉亚！我们在\\c[3]远星枢纽c[0]等你！快点来！<<A<<[CHANGED 2018/09/19]",
+                "ja_JP": "スフィロマンサーのレア！俺たちは\n\\c[3]クロスセントラル\\c[0]の中で\n待っているぞ！早く来い！<<A<<[CHANGED 2018/09/19]",
+                "ko_KR": "원술사 레아! 우린 \\c[3]크로스센트럴\\c[0] 안에서 기다리고 있다! 서둘러!<<A<<[CHANGED 2018/09/19]",
+                "langUid": 14811,
+                "zh_TW": "氣圓使者莉亞！我們在\\c[3]遠星樞紐c[0]等你！快點來！<<A<<[CHANGED 2018/09/19]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 19100",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14812,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! Sapphire Ridge is quite the mysterious place, isn't it?",
+                "de_DE": "Spheromancer Lea! Der Saphirgrat ist ein ziemlich mysteriöser Ort, nicht wahr?",
+                "zh_CN": "气圆使者莉亚！青玉山脉这里确实神秘！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア！\nサファイア峰は\nとても神秘的な場所だろう？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아! 사파이어 산맥은 참 기묘한 곳인 것 같아. 그렇지 않나?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14813,
+                "zh_TW": "氣圓使者莉亞！青玉山脈這裡確實神秘！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Covered by an eternal shadow, filled with mazes of bamboo.",
+                "de_DE": "Umhüllt von einem ewigen Schatten und voller Bambuslabyrinthe.",
+                "zh_CN": "阴影缭绕，竹林密布。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "永遠の影に覆われ、竹でできた迷路が\nそこらじゅうにある地だ。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "사라지지 않는 어둠으로 덮이고 대나무 미로로 가득한 곳.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14814,
+                "zh_TW": "陰影繚繞，竹林密佈。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Just barely touched by human civilization as well.",
+                "de_DE": "Und von der Zivilisation weitgehend verschont geblieben.",
+                "zh_CN": "人类文明点缀其中。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "人類の文明の跡は\nわずかしか見られない。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "그리고 인류 문명의 손길이 거의 닿지 않은 곳이기도 하지.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14815,
+                "zh_TW": "人類文明點綴其中。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 19050",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14816,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! Joern and I are planning to explore \\c[3]Sapphire Ridge\\c[0]! Let us know if you want to join us!",
+                "de_DE": "Spheromancer Lea! Joern und ich planen, den \\c[3]Saphirgrat\\c[0] zu erkunden! Lass uns wissen, wenn du uns begleiten willst!",
+                "zh_CN": "气圆使者莉亚！乔恩和我正打算探索\\c[3]青玉山脉\\c[0]！想加入的话就跟我们说一声！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア！ジョアンと俺は\n\\c[3]サファイア峰\\c[0]の探索に出かける予定だ！\n一緒に来たくば知らせるがいい！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아! 난 존과 함께 \\c[3]사파이어 산맥\\c[0]을 탐험하기로 했어! 우리와 같이 탐험하고 싶다면 얘기해!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14817,
+                "zh_TW": "氣圓使者莉亞！喬恩和我正打算探索\\c[3]青玉山脈\\c[0]！想加入的話就跟我們說一聲！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14818,
+                "zh_TW": "...!<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ASTONISHED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "area.tree-dng.isCurrent",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 14819,
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea, we are in the middle of a race! This is not time for chit-chat!",
+                "de_DE": "Spheromancer Lea, wir sind mitten in einem Rennen! Keine Zeit zum Plaudern!",
+                "zh_CN": "气圆使者莉亚，现在可不是聊天的时候，我们正在比赛呢！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア、俺たちは\nレースの最中だぞ！おしゃべりをする\n時間はない！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아, 우린 지금 시합 중이야! 수다 떨 시간은 없다고!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14820,
+                "zh_TW": "氣圓使者莉亞，現在不是聊天的時候，我們正在比賽呢！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "SHOUTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Why?",
+                "de_DE": "Warum?",
+                "zh_CN": "为什么？<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "どうして？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "왜?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14821,
+                "zh_TW": "為什麼？<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Because our full attention should be on overcoming the trials of the Grand Krys'kajo!",
+                "de_DE": "Weil unsere volle Aufmerksamkeit beim Überwinden der Herausforderungen im Großen Krys’kajo liegen sollte!",
+                "zh_CN": "因为完成大凯斯卡罗的试炼需要我们全神贯注的投入！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "なぜなら、クリュス・カーヨ大神殿の\n試練を突破することに、意識をすべて\n集中しなければならないからだ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "왜냐하면 그랜드 크리스카조를 끝까지 통과하는 데 집중해야 하기 때문이다!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14822,
+                "zh_TW": "因為完成大凱斯卡羅的試煉需要我們全神貫注的投入！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Why?",
+                "de_DE": "Warum?",
+                "zh_CN": "为什么？<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "どうして？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "왜?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14823,
+                "zh_TW": "為什麼？<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SMUG"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14824,
+                "zh_TW": "...<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "MOPING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Why?",
+                "de_DE": "Warum?",
+                "zh_CN": "为什么？<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "どうして？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "왜?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14825,
+                "zh_TW": "為什麼？<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "WHISTLING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I heard you, Spheromancer.",
+                "de_DE": "Ich habe dich verstanden, Spheromancer.",
+                "zh_CN": "我懂了，气圆使者。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "二度聞く必要はないぞ、\nスフィロマンサー。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "네 말 잘 들려, 원술사.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14826,
+                "zh_TW": "我懂了，氣圓使者。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "MOPING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "How?",
+                "de_DE": "Wie?",
+                "zh_CN": "怎么办？<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "どうやって？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "어떻게?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14827,
+                "zh_TW": "怎麼辦？<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ASTONISHED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Alright, enough. You're wasting my time!",
+                "de_DE": "Genug jetzt. Du verschwendest meine Zeit!",
+                "zh_CN": "不要再浪费时间了，继续吧！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "ああ、もういい。\nお前と話すのは時間の無駄だ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "좋아, 그만. 내 시간을 낭비하고 있잖아!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14828,
+                "zh_TW": "不要再浪費時間了，繼續吧！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "SHOUTING"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 18100",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14829,
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! I have to say this concept of \"dungeon races\" is interesting, indeed.",
+                "de_DE": "Spheromancer Lea! Ich muss zugeben, dass die Idee des \"Dungeon-Rennens\" tatsächlich sehr interessant ist.",
+                "zh_CN": "气圆使者莉亚！我必须承认，你说的这个\"地牢竞速\"很有意思。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア！\nダンジョンレースというアイデアは、\n実に興味深いと言わざるを得ない。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아! 이 \"던전 시합\"의 콘셉트는 참으로 흥미롭군.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14830,
+                "zh_TW": "氣圓使者莉亞！我必須承認，你說的這個\"地牢竟速\"很有意思。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "You don't meet a lot of players with this competitive spirit!",
+                "de_DE": "Man trifft nicht oft auf Spieler, die sich messen wollen!",
+                "zh_CN": "如此充满竞技精神的玩家现在可不多见！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "これほどの競争心にあふれた\nプレイヤーにはそう出会えないぞ。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "그런 경쟁의 정신을 갖춘 플레이어는 많지 않지!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14831,
+                "zh_TW": "如此充滿竟技精神的玩家現在可不多見！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14832,
+                "zh_TW": "...<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SURPRISED_TOWARD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14833,
+                "zh_TW": "...!<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "HAND_POINT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Why yes, I'd consider myself a competitive player as well!",
+                "de_DE": "Nun, ich würde mich selbst auch als einen solchen Spieler bezeichnen!",
+                "zh_CN": "当然，我也是这样充满竞技精神的玩家！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "なんだ、当然だろう。\n俺は自分も競争心にあふれた\nプレイヤーだと考えている！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "아, 그래 물론 나도 경쟁심이 강한 플레이어지!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14834,
+                "zh_TW": "當然，我也是這樣充滿竟技精神的玩家！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "LECTURING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I am already looking forward to our next duel!",
+                "de_DE": "Ich freue mich jetzt schon auf das nächste Duell!",
+                "zh_CN": "我很期待我们下次的决斗！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "もうすでに、\n次の決闘が楽しみだぞ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "벌써 다음 결투를 기대하고 있다고!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14835,
+                "zh_TW": "我很期待我們下次的決鬥！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "CONTENT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14836,
+                "zh_TW": "...<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXHAUSTED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 17500",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14837,
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! I assume you are still exploring the realms of Gaia's Garden.",
+                "de_DE": "Spheromancer Lea! Ich nehme an, du erkundest immer noch die Gefilde von Gaias Garten?",
+                "zh_CN": "气圆使者莉亚！我猜你应该还在探索盖亚花园吧。<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア！お前はまだ\nガイアの園を探索しているようだな。<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아! 가이아의 정원을 아직도 탐험하고 있나보군.<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14838,
+                "zh_TW": "氣圓使者莉亞！我猜你應該還在探索蓋亞花園吧。<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Did you already tackle the dungeons in the north?",
+                "de_DE": "Hast du bereits die Dungeons im Norden in Angriff genommen?",
+                "zh_CN": "你已经完成了北方的地牢了吗？<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "北のダンジョンには\nもう挑戦したのか？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "북쪽에 있는 던전은 이미 끝낸 거냐?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14839,
+                "zh_TW": "你已經完成了北方的地牢了嗎？<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14840,
+                "zh_TW": "[點頭]<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Very good! Fulfilling your Seeker duties, mastering the challenges of the Ancients!",
+                "de_DE": "Sehr gut! Deine Pflicht als Seeker erfüllen, die Herausforderungen der Ahnen meistern!",
+                "zh_CN": "很好！执行你作为探索者的职责，完成先祖留下的挑战！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "それはいい！探索者の使命を果たし、\n古代人からの挑戦を乗り越えるとは！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "아주 좋아! 시커의 의무를 이행하고, 고대인의 챌린지를 숙달하고!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14841,
+                "zh_TW": "很好！執行你作為探索者的職責，完成先祖留下的挑戰！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "CONTENT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Joern and I are doing the same at this very moment!",
+                "de_DE": "Joern und ich tun das ebenfalls gerade, just in diesem Augenblick !",
+                "zh_CN": "我和乔恩现在就在做呢！<<A<<[CHANGED 2018/09/19]",
+                "ja_JP": "俺とジョアンもまさに\n同じことをしていたところだ！<<A<<[CHANGED 2018/09/19]",
+                "ko_KR": "나와 존은 지금 내가 말한 것과 같은 일을 하고 있지!<<A<<[CHANGED 2018/09/19]",
+                "langUid": 14842,
+                "zh_TW": "我和喬恩現在就在做呢！<<A<<[CHANGED 2018/09/19]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14843,
+                "zh_TW": "...!<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ASTONISHED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 16000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14923,
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Spheromancer Lea! You're running through very obscure places right now!",
+                "de_DE": "Spheromancer Lea! Du durchläufst soeben recht obskure Orte!",
+                "zh_CN": "气圆使者莉亚！你现在地处偏远！<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "スフィロマンサーのレア！今はずいぶんと\nへんぴな場所を通っているようだな！<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "원술사 레아! 지금은 아주 애매모호한 장소를 탐험하고 있군!<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14924,
+                "zh_TW": "氣圓使者莉亞！你現在地處偏遠！<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "POINTING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "We should focus on resolving the conflict between humans and Shad, don't you agree?",
+                "de_DE": "Wir sollten uns darauf konzentrieren, den Konflikt zwischen Menschen und Shad zu lösen, meinst du nicht auch?",
+                "zh_CN": "我们应该专注于解决人类和沙德的矛盾，对吧？<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "俺たちは人間とシャッドのあいだの\nいざこざを解決するのに\n集中するべきだ。そうだろう？<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "인간과 샤드 간의 갈등을 해결하는 데 집중해야지, 안 그래?<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14925,
+                "zh_TW": "我們應該專注於解決人類和沙德的矛盾，對吧？<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "antagonists.fancyguy",
+                "expression": "ANGRY"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2018/08/01]",
+                "ja_JP": "...<<A<<[CHANGED 2018/08/01]",
+                "ko_KR": "...<<A<<[CHANGED 2018/08/01]",
+                "langUid": 14926,
+                "zh_TW": "...<<A<<[CHANGED 2018/08/01]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SURPRISED_AWAY"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "message": {
+            "en_US": "Hi!",
+            "de_DE": "Hi!",
+            "fr_FR": "fr_FR",
+            "langUid": 14844,
+            "zh_CN": "你好！<<A<<[CHANGED 2018/08/01]",
+            "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/01]",
+            "ko_KR": "안녕!<<A<<[CHANGED 2018/08/01]",
+            "zh_TW": "你好！<<A<<[CHANGED 2018/08/01]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.lea",
+            "expression": "EXCITED"
+          }
+        },
+        {
+          "message": {
+            "en_US": "Wat.",
+            "de_DE": "Was.",
+            "zh_CN": "啥。<<A<<[CHANGED 2018/08/01]",
+            "ja_JP": "なんだと。<<A<<[CHANGED 2018/08/01]",
+            "ko_KR": "뭐.<<A<<[CHANGED 2018/08/01]",
+            "langUid": 14845,
+            "zh_TW": "什麼。<<A<<[CHANGED 2018/08/01]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "antagonists.fancyguy",
+            "expression": "MOPING"
+          }
+        },
+        {
+          "name": "end",
+          "type": "LABEL"
+        },
+        {
+          "skipSounds": false,
+          "type": "END_PRIVATE_MSG"
+        }
+      ],
+      "loopCount": 1,
+      "type": {
+        "member": "Apollo",
+        "actionType": "CONTACT",
+        "type": "SOCIAL_ACTION"
+      }
+    }
+  }
+]

@@ -1,0 +1,1278 @@
+[
+  {
+    "type": "SET_KEY",
+    "index": "shizuka-contact",
+    "content": {
+      "frequency": "ALWAYS",
+      "repeat": "REPEAT",
+      "eventType": "PARALLEL",
+      "overrideSideMessage": false,
+      "event": [
+        {
+          "outgoing": true,
+          "type": "RING_PRIVATE_MSG"
+        },
+        {
+          "type": "START_PRIVATE_MSG"
+        },
+        {
+          "side": "LEFT",
+          "order": 0,
+          "clearSide": false,
+          "type": "ADD_MSG_PERSON",
+          "person": {
+            "person": "main.shizuka",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "side": "RIGHT",
+          "order": 0,
+          "clearSide": false,
+          "type": "ADD_MSG_PERSON",
+          "person": {
+            "person": "main.lea",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "party.has.Shizuka",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "fr_FR": "fr_FR",
+                "langUid": 18419,
+                "zh_CN": "你好！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/02/24]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXCITED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hello, fellow partymember!",
+                "de_DE": "Hallo, Partymitglied!",
+                "zh_CN": "你好啊，队友！<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "等等！！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "パーティメンバーさん、こんにちは！<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "안녕, 동료 파티원!<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18420
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "FUNNY_SMILE"
+              }
+            },
+            {
+              "withElse": true,
+              "type": "IF",
+              "condition": "!location.isMapDungeon",
+              "thenStep": [
+                {
+                  "message": {
+                    "en_US": "Preferring D-Link over talking to me directly?",
+                    "de_DE": "Du willst lieber d-linken, anstatt direkt mit mir zu sprechen?",
+                    "zh_CN": "怎么，不需要直连的，有什么话\\.直接跟我说不就好了吗。<<A<<[CHANGED 2021/02/24]",
+                    "zh_TW": "等等！！<<A<<[CHANGED 2021/02/24]",
+                    "ja_JP": "直接話すより、私とはダイレクトリンクの\n方がいいかしら？<<A<<[CHANGED 2021/02/24]",
+                    "ko_KR": "직접 얘기하는 것보다 D-링크로 얘기하는 게 더 좋나 봐?<<A<<[CHANGED 2021/02/24]",
+                    "langUid": 18421
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.shizuka",
+                    "expression": "SMUG"
+                  }
+                }
+              ],
+              "elseStep": [
+                {
+                  "message": {
+                    "en_US": "We can talk again directly once we left the instance, right?",
+                    "de_DE": "Wir können doch wieder reden, sobald wir die Instanz verlassen haben, oder?",
+                    "zh_CN": "等我们离开了副本实例再说吧。<<A<<[CHANGED 2021/02/24]",
+                    "zh_TW": "等等！！<<A<<[CHANGED 2021/02/24]",
+                    "ja_JP": "個別生成から出たら直接話しましょ。<<A<<[CHANGED 2021/02/24]",
+                    "ko_KR": "개별 방을 나가면 다시 얼굴 보고 얘기하자, 알겠지?<<A<<[CHANGED 2021/02/24]",
+                    "langUid": 18422
+                  },
+                  "autoContinue": false,
+                  "type": "SHOW_MSG",
+                  "person": {
+                    "person": "main.shizuka",
+                    "expression": "DOWN"
+                  }
+                }
+              ]
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "…<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18423
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "type": "IF",
+          "condition": "plot.line >= 60000",
+          "thenStep": [
+            {
+              "type": "IF",
+              "withElse": true,
+              "condition": "plot.shizukaRelationshipConvo && !tmp.shizukaConvo",
+              "thenStep": [
+                {
+                  "type": "IF",
+                  "withElse": true,
+                  "condition": "hangouts.day1.shizuka",
+                  "thenStep": [
+                    {
+                      "person": {
+                        "person": "main.shizuka",
+                        "expression": "CONFLICTED"
+                      },
+                      "message": {
+                        "en_US": "Not now, Lea."
+                      },
+                      "type": "SHOW_MSG"
+                    },
+                    {
+                      "person": {
+                        "person": "main.lea",
+                        "expression": "SAD_AWAY"
+                      },
+                      "message": {
+                        "en_US": "..."
+                      },
+                      "type": "SHOW_MSG"
+                    }
+                  ],
+                  "elseStep": [
+                    {
+                      "person": {
+                        "person": "main.lea",
+                        "expression": "EXCITED"
+                      },
+                      "message": {
+                        "en_US": "Hi!"
+                      },
+                      "type": "SHOW_MSG"
+                    },
+                    {
+                      "type": "IF",
+                      "withElse": true,
+                      "condition": "location.currentMap == \"hideout.path-3\"",
+                      "thenStep": [
+                        {
+                          "person": {
+                            "person": "main.shizuka",
+                            "expression": "INNOCENT"
+                          },
+                          "message": {
+                            "en_US": "Lea, I can literally see you."
+                          },
+                          "type": "SHOW_MSG"
+                        },
+                        {
+                          "person": {
+                            "person": "main.shizuka",
+                            "expression": "FUNNY_SMILE"
+                          },
+                          "message": {
+                            "en_US": "No need for a direct link."
+                          },
+                          "type": "SHOW_MSG"
+                        },
+                        {
+                          "person": {
+                            "person": "main.lea",
+                            "expression": "MOPING"
+                          },
+                          "message": {
+                            "en_US": "..."
+                          },
+                          "type": "SHOW_MSG"
+                        }
+                      ],
+                      "elseStep": [
+                        {
+                          "person": {
+                            "person": "main.shizuka",
+                            "expression": "BRIGHT"
+                          },
+                          "message": {
+                            "en_US": "Hey Lea."
+                          },
+                          "type": "SHOW_MSG"
+                        },
+                        {
+                          "person": {
+                            "person": "main.shizuka",
+                            "expression": "INNOCENT"
+                          },
+                          "message": {
+                            "en_US": "I'm at the Old Hideout right now, if you're looking for me."
+                          },
+                          "type": "SHOW_MSG"
+                        },
+                        {
+                          "person": {
+                            "person": "main.shizuka",
+                            "expression": "SMILE"
+                          },
+                          "message": {
+                            "en_US": "You know where."
+                          },
+                          "type": "SHOW_MSG"
+                        },
+                        {
+                          "person": {
+                            "person": "main.lea",
+                            "expression": "EXCITED"
+                          },
+                          "message": {
+                            "en_US": "Thanks!"
+                          },
+                          "type": "SHOW_MSG"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "elseStep": [
+                {
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "EXCITED"
+                  },
+                  "message": {
+                    "en_US": "Hi!"
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.shizuka",
+                    "expression": "BRIGHT"
+                  },
+                  "message": {
+                    "en_US": "Hey Lea."
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.shizuka",
+                    "expression": "INNOCENT"
+                  },
+                  "message": {
+                    "en_US": "I'm literally right outside your house."
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.shizuka",
+                    "expression": "FUNNY_SMILE"
+                  },
+                  "message": {
+                    "en_US": "You could just say hi to me there, you know."
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "MOPING"
+                  },
+                  "message": {
+                    "en_US": "..."
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.shizuka",
+                    "expression": "INNOCENT"
+                  },
+                  "message": {
+                    "en_US": "I'm probably going to head to the Old Hideout soon, though."
+                  },
+                  "type": "SHOW_MSG"
+                },
+                {
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "ASTONISHED"
+                  },
+                  "message": {
+                    "en_US": "..."
+                  },
+                  "type": "SHOW_MSG"
+                }
+              ]
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 48000 && plot.shizuka.cupGot",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2018/08/28]",
+                "zh_TW": "你好！<<A<<[CHANGED 2018/08/28]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/08/28]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/08/28]",
+                "langUid": 15238
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea!\\. How's it going?",
+                "de_DE": "Hey, Lea!\\. Wie geht's?",
+                "zh_CN": "嘿，莉亚！\\.近况如何？<<A<<[CHANGED 2021/02/26]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/02/26]",
+                "ja_JP": "レア！\\.調子はどう？<<A<<[CHANGED 2021/02/26]",
+                "ko_KR": "안녕, 레아!\\. 잘 지냈어?<<A<<[CHANGED 2021/02/26]",
+                "langUid": 17537
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I feel like I'm just procrastinating right now....",
+                "de_DE": "Ich habe das Gefühl, dass ich gerade alles vor mir herschiebe...",
+                "zh_CN": "我感觉我真是拖延症犯了。<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "今はいろいろ、先延ばしにしてるだけって\n気がするの....<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "지금은 그냥 미뤄야겠어...<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18438
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "SMILE"
+              }
+            },
+            {
+              "message": {
+                "en_US": "There are things I should take care of, yet all I do is play CrossWorlds.",
+                "de_DE": "Eigentlich müsste ich mich um ein paar Dinge kümmern, aber irgendwie spiele ich einfach gerade lieber CrossWorlds.<<A<<[CHANGED 2021/05/22]",
+                "zh_CN": "手头工作一大堆，但我却在这玩远星世界。<<A<<[CHANGED 2021/05/22]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/05/22]",
+                "ja_JP": "考えなきゃいけないことがあるのに、\nやってるのはこのゲームだけ。<<A<<[CHANGED 2021/05/22]",
+                "ko_KR": "해야 할 일이 있지만 크로스월드만 플레이하고 있네.<<A<<[CHANGED 2021/05/07]",
+                "langUid": 18432
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "...<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "...<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18433
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "WHISTLING"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Well, let me know when you're \\c[3]up for a duel in the arena\\c[0]!",
+                "de_DE": "Sag mir auf jeden Fall Bescheid, wenn du \\c[3]Lust auf ein Duell in der Arena\\c[0] hast!",
+                "zh_CN": "对了，如果你准备好和我再分高下，就去\\c[3]竞技场\\c[0]吧！<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "あ、\\c[3]アリーナで決闘する気に\\c[0]\nなったら教えてね！<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "\\c[3]경기장에서 대결할 준비\\c[0]가 되면 알려줘!<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18434
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "SMUG"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "你好！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "…！<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "...!<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18435
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DETERMINED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 48000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18436,
+                "zh_TW": "你好！<<A<<[CHANGED 2021/02/24]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea!\\. How is it going?",
+                "de_DE": "Hey, Lea!\\. Wie geht's?",
+                "zh_CN": "嘿，莉亚！\\.近况如何？<<A<<[CHANGED 2021/02/24]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/02/24]",
+                "ja_JP": "レア！\\.調子はどう？<<A<<[CHANGED 2021/02/24]",
+                "ko_KR": "안녕, 레아!\\. 잘 지냈어?<<A<<[CHANGED 2021/02/24]",
+                "langUid": 18437
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I'm currently having a calm moment at my favorite place in the Playground.",
+                "de_DE": "Ich genieße gerade einen ruhigen Moment an meinem Lieblingsplatz auf dem Spielplatz.",
+                "zh_CN": "我正在我最喜欢的一处游乐场地点放松呢。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "今、プレイエリアのお気に入りの場所で\nゆっくりしてるの。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "난 지금 플레이그라운드에 내가 제일 좋아하는 장소에서 차분한 시간을 보내고 있어.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17533
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "BRIGHT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I'm kinda surprised we can still go there.",
+                "de_DE": "Bin etwas überrascht, dass wir immer noch dorthin können.",
+                "zh_CN": "说实话我没想到他们还让我们来这。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "まだここに来れることにちょっとびっくり。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "아직도 그곳에 갈 수 있다는 게 놀랍더라.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17534
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "INNOCENT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Oh...\\. if you feel like starting a party though, let me know!",
+                "de_DE": "Oh...\\. und wenn du Lust auf eine Party hast, lass es mich wissen!",
+                "zh_CN": "哦...\\.如果你打算组队，叫我一声就行！<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "あぁ...\\.もしパーティーを組みたいなら\n言ってよね！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "아...\\. 파티를 시작하고 싶다면 말해줘!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17535
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "INNOCENT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I've got time today.",
+                "de_DE": "Heute habe ich Zeit.",
+                "zh_CN": "我有空的。<<A<<[CHANGED 2021/03/05]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/03/05]",
+                "ja_JP": "今日は時間があるの。<<A<<[CHANGED 2021/03/05]",
+                "ko_KR": "오늘은 시간이 있거든.<<A<<[CHANGED 2021/03/05]",
+                "langUid": 17536
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "BRIGHT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 16019
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SURPRISED_AWAY"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46500",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17538,
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea!\\. Busy running the dungeon...\\. like everyone else!",
+                "de_DE": "Hey, Lea!\\. Bin grad mit dem Dungeon beschäftigt...\\. wie alle anderen auch!",
+                "zh_CN": "嘿，莉亚！\\.我忙着打地牢呢...\\.和其他人一样。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "レア！\\.ダンジョンで忙しいのよ…\r\n\\.他のみんなと同じかしらね！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕, 레아!\\. 나도 다른 사람들처럼...\\. 던전을 진행하느라 바빠.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17539
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I feel a bit rusty...\\. Has been some time since I've been solving puzzles like these.",
+                "de_DE": "Ich fühl' mich ein bisschen eingerostet...\\. Ist schon einige Zeit her, seit ich solche Rätsel gelöst habe.",
+                "zh_CN": "感觉手有点生...\\.有一段时间没有解这么复杂的谜题了。<<A<<[CHANGED 2021/03/05]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/03/05]",
+                "ja_JP": "私、下手になってるわ...\\.こんなパズルを\r\n解いてたころからずいぶん経つもの。<<A<<[CHANGED 2021/03/05]",
+                "ko_KR": "실력이 예전 같지가 않네...\\. 이런 퍼즐을 풀어 본 지도 벌써 꽤 됐으니까.<<A<<[CHANGED 2021/03/05]",
+                "langUid": 17540
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "INNOCENT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It would certainly help if I could borrow your recent memory for a change.",
+                "de_DE": "Es wäre bestimmt leichter, wenn ich mir zur Abwechslung mal dein aktuelles Gedächtnis ausleihen könnte.",
+                "zh_CN": "要是我能借用你近期的记忆就好了。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "あなたの最近の記憶を借りられれば\r\nすごくいいんだけど。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "나한테 네 최근 기억을 빌려줄 수 있다면 도움이 될 것 같은데.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17541
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "SMUG"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17542
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "ANNOYED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46200",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17543,
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea!\\. I'm busy now getting my brother ready for the dungeon!",
+                "de_DE": "Hey, Lea!\\. Ich bin gerade damit beschäftigt, meinen Bruder für den Dungeon fertig zu machen!",
+                "zh_CN": "嘿，莉亚！\\.我正在帮我哥做打地牢的准备呢。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "レア！\\.兄さんのダンジョンの準備で\n忙しいの！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕, 레아!\\. 난 지금 오빠를 던전에 보내려고 준비 중이라 바빠!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17544
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "I'm afraid it will take longer than I anticipated.",
+                "de_DE": "Ich fürchte, es wird länger dauern als gedacht.",
+                "zh_CN": "恐怕花的时间会比较久呢。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "思ってたより時間がかかりそう。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "내가 생각했던 것보다는 오래 걸릴 것 같네.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17545
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "SARCASTIC"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17546
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "EXHAUSTED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 46000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17547,
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea! I'm waiting in front of Satoshi's building!",
+                "de_DE": "Hey, Lea! Ich warte vor Satoshis Haus auf dich!",
+                "zh_CN": "嘿，莉亚！我在智史的地方那里等着了。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "レア！兄さんの建物の前で待ってるわ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕, 레아! 난 지금 오빠네 집 앞에서 기다리고 있어!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17548
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Let's see what brother's up to.",
+                "de_DE": "Mal schauen, was Brüderchen so treibt.",
+                "zh_CN": "不知道我哥在干嘛。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "兄さんがどうしてるか覗いてみましょ。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "오빠가 뭐 하고 있는지 보자.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17549
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "SMILE"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Though, I'm pretty sure he'll be stuck in front of his computer as usual.",
+                "de_DE": "Obwohl ich jetzt schon weiß, dass er vor seinem Computer hocken wird - wie immer.",
+                "zh_CN": "我估计他还是和平时一样贴在电脑上。<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "どうせ、いつもどおりパソコンに\r\n張り付いてるだろうけどね。<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "뭐, 평소처럼 컴퓨터 앞에 처박혀 있기만 할 테지만.<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17550
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "FUNNY_SMILE"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...",
+                "de_DE": "...",
+                "zh_CN": "...<<A<<[CHANGED 2021/01/12]",
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17551
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SMILE"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 30000",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17552,
+                "zh_TW": "你好！<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey Lea...",
+                "de_DE": "Hey, Lea...",
+                "zh_CN": "嘿，莉亚...<<A<<[CHANGED 2021/01/12]",
+                "ja_JP": "レア...<<A<<[CHANGED 2021/01/12]",
+                "ko_KR": "안녕, 레아...<<A<<[CHANGED 2021/01/12]",
+                "langUid": 17553,
+                "zh_TW": "莉亞你好...<<A<<[CHANGED 2021/01/12]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "It looks like the plan was a success so far...\\. kinda?",
+                "de_DE": "Sieht ganz danach aus, als ob der Plan aufgeht...\\. oder?",
+                "zh_CN": "看来计划到目前为止进行的...\\.很顺利?<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "今までのところは計画は\nうまくいってる...\\.みたいね？<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "지금까지는 계획이 성공적인 것 같지...\\. 않아?<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16013,
+                "zh_TW": "看來計劃到目前為止進行的...\\.很順利?<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DOWN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Now you just have to take on Gautham's challenge.",
+                "de_DE": "Jetzt musst du nur noch Gauthams Herausforderung annehmen.",
+                "zh_CN": "现在将由你来接受高谭的挑战。<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "あとはガウタムの\n挑戦を受けるだけね。<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "이제 고트햄에게 도전하기만 하면 돼.<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16014,
+                "zh_TW": "現在將由你來接受高譚的挑戰。<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Let's just hope he doesn't go entirely overboard with this. He tends to do that.",
+                "de_DE": "Hoffen wir nur, dass er damit nicht völlig übertreibt. Er neigt nämlich dazu.",
+                "zh_CN": "希望他不要在这件事上做过火。他经常这样。<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "ガウタムが極端なことに走らないよう\n祈りましょう。あいつ、\nそういう傾向があるから。<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "그가 너무 흥분하지만 않았으면 좋겠어. 종종 그럴 때가 있거든.<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16015,
+                "zh_TW": "希望他不要在這件事上做過火。他經常這樣。<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "CONFLICTED"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...?",
+                "de_DE": "...?",
+                "zh_CN": "...?<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "...？<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "...?<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16016,
+                "zh_TW": "...?<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "SCARED"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "withElse": false,
+          "type": "IF",
+          "condition": "plot.line >= 21200",
+          "thenStep": [
+            {
+              "message": {
+                "en_US": "Hi!",
+                "de_DE": "Hi!",
+                "zh_CN": "你好！<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "やぁ！<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "안녕!<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16017,
+                "zh_TW": "你好！<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Hey there, Lea.\\. Preparing for the final attack on Evotarground?",
+                "de_DE": "Hallo, Lea, bereitest du dich auf den letzten Angriff auf den Evotarplatz vor?",
+                "zh_CN": "哦，莉亚你好，打算进攻进化者园区了吗？<<A<<[CHANGED 2019/08/16]",
+                "ja_JP": "どうも、レア。エヴォターグラウンドでの\n最終決戦に向けて準備してるの？<<A<<[CHANGED 2019/08/16]",
+                "ko_KR": "안녕, 레아. 에보타그라운드의 마지막 공격을 준비하고 있어?<<A<<[CHANGED 2019/08/16]",
+                "langUid": 16018,
+                "zh_TW": "哦，莉亞你好，打算進攻進化者園區了嗎？<<A<<[CHANGED 2019/08/16]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "[nods]",
+                "de_DE": "[nickt]",
+                "zh_CN": "[点头]<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "[うなずく]<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "[끄덕]<<A<<[CHANGED 2018/09/14]",
+                "langUid": 15239,
+                "zh_TW": "[點頭]<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "NOD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Enemies over there can go up to \\c[3]level 60\\c[0].",
+                "de_DE": "Die Gegner dort können bis zu \\c[3]Level 60\\c[0] haben.",
+                "zh_CN": "那里的敌人最高有\\c[3]60级\\c[0]。<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "あそこでは最高で\\c[3]レベル60\\c[0]の\n敵が出てくるわ。<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "그 안에 있는 적은 \\c[3]60 레벨\\c[0] 이상일 수도 있어.<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16020,
+                "zh_TW": "那裡的敵人最高有\\c[3]60級\\c[0]。<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "TOWARD"
+              }
+            },
+            {
+              "message": {
+                "en_US": "But don't worry too much about reaching that level.",
+                "de_DE": "Aber keine Sorge, das heißt nicht, dass du jetzt unbedingt bis Level 60 aufleveln musst.",
+                "zh_CN": "不过不用担心你的等级问题。<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "でも、そのレベルに達してなくても\n心配はいらない。<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "하지만 그 레벨에 도달하는 건 걱정하지 않아도 돼.<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16021,
+                "zh_TW": "不過不用擔心你的等級問題。<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "DEFAULT"
+              }
+            },
+            {
+              "message": {
+                "en_US": "Just make sure you get the \\c[3]good equipment\\c[0] from \\c[3]Rhombus Square\\c[0]. That will do.",
+                "de_DE": "Sorg einfach dafür, dass du dir \\c[3]gute Ausrüstung\\c[0] aus \\c[3]Rhombus Square\\c[0] besorgst. Das sollte reichen.",
+                "zh_CN": "记得在\\c[3]罗姆布斯广场\\c[0]弄一身\\c[3]好装备\\c[0]就行了。<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "\\c[3]ロンバス広場\\c[0]で\\c[3]いい装備\\c[0]を\n手に入れるようにね。\nそれで十分間に合うから。<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "\\c[3]마름모 광장\\c[0]에서 \\c[3]좋은 장비\\c[0]만 사면 되니까. 그 정도면 될 거야.<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16022,
+                "zh_TW": "記得在\\c[3]羅姆布斯廣場\\c[0]弄一身\\c[3]好裝備\\c[0]就行了。<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.shizuka",
+                "expression": "EVIL_GRIN"
+              }
+            },
+            {
+              "message": {
+                "en_US": "...!",
+                "de_DE": "...!",
+                "zh_CN": "...!<<A<<[CHANGED 2018/09/14]",
+                "ja_JP": "...！<<A<<[CHANGED 2018/09/14]",
+                "ko_KR": "...!<<A<<[CHANGED 2018/09/14]",
+                "langUid": 16023,
+                "zh_TW": "...!<<A<<[CHANGED 2018/09/14]"
+              },
+              "autoContinue": false,
+              "type": "SHOW_MSG",
+              "person": {
+                "person": "main.lea",
+                "expression": "PROUD"
+              }
+            },
+            {
+              "name": "end",
+              "type": "GOTO_LABEL"
+            }
+          ]
+        },
+        {
+          "message": {
+            "en_US": "Hi!",
+            "de_DE": "Hi!",
+            "zh_CN": "你好！<<A<<[CHANGED 2018/09/14]",
+            "ja_JP": "やぁ！<<A<<[CHANGED 2018/09/14]",
+            "ko_KR": "안녕!<<A<<[CHANGED 2018/09/14]",
+            "langUid": 16024,
+            "zh_TW": "你好！<<A<<[CHANGED 2018/09/14]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.lea",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "message": {
+            "en_US": "Hello, Lea.",
+            "de_DE": "Hallo, Lea.",
+            "zh_CN": "莉亚你好。<<A<<[CHANGED 2019/08/16]",
+            "ja_JP": "こんにちは、レア。<<A<<[CHANGED 2019/08/16]",
+            "ko_KR": "안녕, 레아.<<A<<[CHANGED 2019/08/16]",
+            "langUid": 16025,
+            "zh_TW": "莉亞你好。<<A<<[CHANGED 2019/08/16]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.shizuka",
+            "expression": "DEFAULT"
+          }
+        },
+        {
+          "message": {
+            "en_US": "...",
+            "de_DE": "...",
+            "zh_CN": "...<<A<<[CHANGED 2018/09/14]",
+            "ja_JP": "...<<A<<[CHANGED 2018/09/14]",
+            "ko_KR": "...<<A<<[CHANGED 2018/09/14]",
+            "langUid": 16026,
+            "zh_TW": "...<<A<<[CHANGED 2018/09/14]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.shizuka",
+            "expression": "DOWN"
+          }
+        },
+        {
+          "message": {
+            "en_US": "...",
+            "de_DE": "...",
+            "zh_CN": "...<<A<<[CHANGED 2018/09/14]",
+            "ja_JP": "...<<A<<[CHANGED 2018/09/14]",
+            "ko_KR": "...<<A<<[CHANGED 2018/09/14]",
+            "langUid": 16027,
+            "zh_TW": "...<<A<<[CHANGED 2018/09/14]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.lea",
+            "expression": "NERVOUS"
+          }
+        },
+        {
+          "message": {
+            "en_US": "Well... looks like we're both at a loss for words.",
+            "de_DE": "Tja... Sieht so aus, als wären wir nun beide sprachlos.",
+            "zh_CN": "看来我们俩都都不太擅长这个。<<A<<[CHANGED 2018/09/14]",
+            "ja_JP": "えっと...お互い、言葉が\n見つからないみたいね。<<A<<[CHANGED 2018/09/14]",
+            "ko_KR": "보아 하니... 우리 둘 다 말을 잃었나 보네.<<A<<[CHANGED 2018/09/14]",
+            "langUid": 16028,
+            "zh_TW": "看來我們兩個都都不太擅長這個。<<A<<[CHANGED 2018/09/14]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.shizuka",
+            "expression": "SMILE"
+          }
+        },
+        {
+          "message": {
+            "en_US": "I suppose...\\. I should thank you for bringing Sergey to us.",
+            "de_DE": "Ich glaube...\\. ich sollte dir dafür danken, dass du Sergey zu uns gebracht hast.",
+            "zh_CN": "...\\.感谢你把谢尔盖带来找到了我们。<<A<<[CHANGED 2018/09/14]",
+            "ja_JP": "お礼を言うべきよね...\\.セルゲイを\n連れてきてくれたことに。<<A<<[CHANGED 2018/09/14]",
+            "ko_KR": "어쩌면...\\. 네가 우리에게 세르게이를 데려와 준 거에 감사해야 할지도.<<A<<[CHANGED 2018/09/14]",
+            "langUid": 16029,
+            "zh_TW": "...\\.感謝你把謝爾蓋帶來找到了我們。<<A<<[CHANGED 2018/09/14]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.shizuka",
+            "expression": "SMILE"
+          }
+        },
+        {
+          "message": {
+            "en_US": "Let's hope we can find a way out of this situation.",
+            "de_DE": "Hoffen wir, dass wir einen Ausweg aus dieser Situation finden.",
+            "zh_CN": "希望我们都能平安度过这一切。<<A<<[CHANGED 2018/09/19]",
+            "ja_JP": "この状況を切り抜ける術が\n見つかればいいわね。<<A<<[CHANGED 2018/09/19]",
+            "ko_KR": "이 상황에서 빠져나갈 방법을 찾을 수 있을 거야.<<A<<[CHANGED 2018/09/19]",
+            "langUid": 16031,
+            "zh_TW": "希望我們都能平安度過這一切。<<A<<[CHANGED 2018/09/19]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.shizuka",
+            "expression": "CONFLICTED"
+          }
+        },
+        {
+          "message": {
+            "en_US": "[nods]",
+            "de_DE": "[nickt]",
+            "zh_CN": "[点头]<<A<<[CHANGED 2018/09/14]",
+            "ja_JP": "[うなずく]<<A<<[CHANGED 2018/09/14]",
+            "ko_KR": "[끄덕]<<A<<[CHANGED 2018/09/14]",
+            "langUid": 16032,
+            "zh_TW": "[點頭]<<A<<[CHANGED 2018/09/14]"
+          },
+          "autoContinue": false,
+          "type": "SHOW_MSG",
+          "person": {
+            "person": "main.lea",
+            "expression": "NOD"
+          }
+        },
+        {
+          "name": "end",
+          "type": "LABEL"
+        },
+        {
+          "skipSounds": false,
+          "type": "END_PRIVATE_MSG"
+        }
+      ],
+      "loopCount": 1,
+      "type": {
+        "member": "Shizuka",
+        "actionType": "CONTACT",
+        "type": "SOCIAL_ACTION"
+      }
+    }
+  }
+]

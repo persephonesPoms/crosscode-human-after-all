@@ -10,7 +10,7 @@
     "level": 1,
     "order": 0,
     "description": {
-      "en_US": "You are excited to spend time with your friends today. There are a few people you particularly want to talk to."
+      "en_US": "You are excited to spend time with your friends today. There are a few people it feels especially important to talk to."
     },
     "briefing": {
       "en_US": "You've spent time with everyone you wanted to. You can head to bed once you're ready to move on to tomorrow."
@@ -47,6 +47,76 @@
             "label": "ctron",
             "text": {
               "en_US": "Talk to C'tron"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "sergey",
+            "text": {
+              "en_US": "Investiage the terminal in your hallway"
+            },
+            "type": "CONDITION"
+          }
+        ]
+      }
+    ],
+    "rewards": {},
+    "area": "evo-village"
+  },"day-2": {
+    "mandatory": true,
+    "name": {
+      "en_US": "Day 2"
+    },
+    "person": {
+      "en_US": "Lea"
+    },
+    "level": 1,
+    "order": 0,
+    "description": {
+      "en_US": "The beach party was fun, but you'd still like to spend time with your friends individually, too."
+    },
+    "briefing": {
+      "en_US": "You've spent time with everyone you wanted to. You can head to bed once you're ready to move on to tomorrow."
+    },
+    "hiderewards": true,
+    "tasks": [
+      {
+        "task": {
+          "en_US": "Spend time with your friends."
+        },
+        "subtasks": [
+          {
+            "label": "shizuka",
+            "text": {
+              "en_US": "Talk to Shizuka"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "emilie",
+            "text": {
+              "en_US": "Talk to Emilie"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "luke",
+            "text": {
+              "en_US": "Talk to Luke"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "ctron",
+            "text": {
+              "en_US": "Talk to C'tron"
+            },
+            "type": "CONDITION"
+          },
+          {
+            "label": "satoshi",
+            "text": {
+              "en_US": "Check on Satoshi"
             },
             "type": "CONDITION"
           },
