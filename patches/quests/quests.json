@@ -44,7 +44,7 @@
             "type": "CONDITION"
           },
           {
-            "label": "c'tron",
+            "label": "ctron",
             "text": {
               "en_US": "Talk to C'tron"
             },
@@ -126,6 +126,78 @@
             "label": "shizuka",
             "text": {
               "en_US": "Continue spending time with Shizuka."
+            },
+            "type": "CONDITION"
+          }
+        ]
+      }
+    ],
+    "rewards": {},
+    "area": "evo-village"
+  },
+  "close-to-you": {
+    "mandatory": true,
+    "name": {
+      "en_US": "Somewhere Close To You"
+    },
+    "person": {
+      "en_US": "Lea"
+    },
+    "level": 1,
+    "order": 1,
+    "description": {
+      "en_US": "Emilie is afraid she's going to drift apart from you. Show her that you will be her friend no matter what."
+    },
+    "briefing": {
+      "en_US": "You've shown Emilie that you're here for her, no matter what happens."
+    },
+    "hiderewards": true,
+    "tasks": [
+      {
+        "task": {
+          "en_US": "Be there for Emilie."
+        },
+        "subtasks": [
+          {
+            "label": "task",
+            "text": {
+              "en_US": "Continue spending time with Emilie."
+            },
+            "type": "CONDITION"
+          }
+        ]
+      }
+    ],
+    "rewards": {},
+    "area": "evo-village"
+  },
+  "defragmentation": {
+    "mandatory": true,
+    "name": {
+      "en_US": "Defragmentation"
+    },
+    "person": {
+      "en_US": "Lea"
+    },
+    "level": 1,
+    "order": 1,
+    "description": {
+      "en_US": "C'tron is upset that he can't get along with Shizuka. His guilt is seriously affecting him. You are going to help the two reconcile."
+    },
+    "briefing": {
+      "en_US": "C'tron and Shizuka are starting to get along better. They still have a long way to go, but things are improving."
+    },
+    "hiderewards": true,
+    "tasks": [
+      {
+        "task": {
+          "en_US": "Help C'tron and Shizuka get along."
+        },
+        "subtasks": [
+          {
+            "label": "task",
+            "text": {
+              "en_US": "Spend time with C'tron and Shizuka."
             },
             "type": "CONDITION"
           }

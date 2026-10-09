@@ -25,5 +25,14 @@
                 "haa-blushing"
             ]
         ]
+    },
+	"HAA_CRY_BLUSHING": {
+        "faces": [
+            [
+                "straight",
+                "up",
+                "haa-cryBlushing"
+            ]
+        ]
     }
 }

@@ -6,6 +6,8 @@
         "height": 56,
         "destX": 16,
         "destY": 40,
+          "subX": 0,
+          "subY": 0,
         "img": "haa-emilie"
     },
 	"haa-pensiveBlushing": {
@@ -15,6 +17,8 @@
         "height": 56,
         "destX": 16,
         "destY": 40,
+          "subX": 0,
+          "subY": 0,
         "img": "haa-emilie"
     },
 	"haa-blushing": {
@@ -24,6 +28,19 @@
         "height": 56,
         "destX": 16,
         "destY": 40,
+          "subX": 0,
+          "subY": 0,
+        "img": "haa-emilie"
+    },
+	"haa-cryBlushing": {
+        "srcX": 0,
+        "srcY": 280,
+        "width": 80,
+        "height": 56,
+        "destX": 16,
+        "destY": 40,
+          "subX": 0,
+          "subY": 0,
         "img": "haa-emilie"
     }
 	
