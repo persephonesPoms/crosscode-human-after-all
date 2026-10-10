@@ -17,5 +17,5 @@ Three FULLY OPTIONAL romance plotlines (which are not mutually exclusive! Give L
 
 Finally get rid of those horns! I am planning to implement a new Lea skin with no horns and a cute flower in her hair <3 (This will not affect dialogue portraits or her sprites in cutscenes, because I am one person and making a new skin is already a lot of work, sorry :pensive:)
 
-Help Lea's friends through their issues! Act 1 focuses on Lea helping some of her friends deal struggles they are facing. Sure hope no *new* problems show up in the meantime! 😇
+Help Lea's friends through their issues! Act 1 focuses on Lea helping some of her friends deal with the struggles they are still facing after the events of A New Home. Sure hope no *new* problems show up in the meantime! 😇
 ![Friendquest Image](/readme-images/friendquests.png)
