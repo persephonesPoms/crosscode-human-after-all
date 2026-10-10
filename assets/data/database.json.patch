@@ -16,6 +16,15 @@
 {"type":"IMPORT","src":"mod:patches/chapters.json"},
 {"type":"EXIT","count":1},
 
+{"type": "INIT_KEY","index": "playerSkins","content":{}},
+{"type": "ENTER","index": "playerSkins"},
+{"type":"IMPORT","src":"mod:patches/skins.json"},
+{"type":"EXIT","count":1},
+
+{"type": "ENTER","index": ["toggle-sets","skins","items"]},
+{"type": "ADD_ARRAY_ELEMENT", "content": "haa-flower"},
+{"type":"EXIT","count":3},
+
 {"type": "ENTER","index": "commonEvents"},
 {"type":"INCLUDE","src":"mod:patches/direct-link/luke.json"},
 {"type":"INCLUDE","src":"mod:patches/direct-link/emilie.json"},

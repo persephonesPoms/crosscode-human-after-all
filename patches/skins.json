@@ -1,0 +1,21 @@
+{
+    "haa-flower-lea": {
+        "id": "haa-flower-lea",
+        "item": "haa-flower",
+        "autoAdd": false,
+        "type": "Appearance",
+        "settings": {
+            "sheet": "player-skins.flower-lea",
+            "fx": "skins.ninja",
+            "gui": "ninja.png",
+            "guiBounds": {
+                "face": {
+                    "x": 44,
+                    "y": 44,
+                    "w": 60,
+                    "h": 34
+                }
+            }
+        }
+    }
+}

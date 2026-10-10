@@ -1,0 +1,33 @@
+[{
+  "type": "ENTER",
+  "index": "items"
+},{
+  "type": "ADD_ARRAY_ELEMENT",
+  "content":
+  {
+    "order": 20,
+    "customItem": "haa-flower",
+    "name": {
+      "en_US": "Flower Headgear",
+      "langUid": 0
+    },
+    "description": {
+      "en_US": "A treasured gift from a \\c[3]treasured friend\\c[0].",
+      "langUid": 1
+    },
+    "type": "TOGGLE",
+    "rarity": 0,
+    "cost": 1000,
+    "level": 1,
+    "icon": "item-toggle",
+    "noTrack": true,
+    "noCount": false,
+    "isScalable": false,
+    "effect": {
+      "sheet": "drops",
+      "name": "circle"
+    }
+  }
+},{
+  "type": "EXIT"
+}]
