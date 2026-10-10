@@ -5,6 +5,9 @@ An unofficial story expansion for the game CrossCode. Currently only contains co
 
 Requires the "A New Home" DLC.
 
+## Current State
+Only day 1 can be played right now.
+
 ## Planned Content
 Three acts containing multiple in-game days each. I'll do the first proper release once act 1 is finished.
 
