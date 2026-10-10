@@ -8,6 +8,8 @@ Requires the "A New Home" DLC.
 ## Current State
 Only day 1 can be played right now.
 
+Only the route where C'tron has not been deleted can be played. A modified storyline accounting for C'tron's deletion will be implemented after act 1 is finished.
+
 ## Planned Content
 Three acts containing multiple in-game days each. I'll do the first proper release once act 1 is finished.
 
