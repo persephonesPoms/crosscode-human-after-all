@@ -12,7 +12,7 @@ A new area named Nebula Canyon, featuring no combat, but new cutscenes, characte
 
 A new, optional puzzle-focused dungeon in Nebula Canyon with extremely difficult puzzles.
 
-Three FULLY OPTIONAL romance plotlines (which are not mutually exclusive! Give Lea three partners if you'd like, they're cool with it!) 
+Three FULLY OPTIONAL romance plotlines (which are not mutually exclusive! Give Lea three partners if you'd like. They're cool with it!) 
 ![Romance Image](/readme-images/romance.png)
 
 Finally get rid of those horns! I am planning to implement a new Lea skin with no horns and a cute flower in her hair <3 (This will not affect dialogue portraits or her sprites in cutscenes, because I am one person and making a new skin is already a lot of work, sorry :pensive:)
