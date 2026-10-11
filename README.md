@@ -10,7 +10,7 @@ Only day 1 can be played right now.
 
 Only the route where C'tron has not been deleted can be played. A modified storyline accounting for C'tron's deletion will be implemented after act 1 is finished.
 
-The Flower Lea skin affects dialogue portraits but not overworld sprites.
+The Flower Lea skin currently affects dialogue portraits but not overworld sprites.
 
 ## Planned Content
 Three acts containing multiple in-game days each. I'll do the first proper release once act 1 is finished.
