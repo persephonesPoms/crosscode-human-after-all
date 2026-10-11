@@ -5,9 +5,10 @@
         "autoAdd": false,
         "type": "Appearance",
         "settings": {
-            "sheet": "player-skins.flower-lea",
-            "fx": "skins.ninja",
-            "gui": "ninja.png",
+            "sheet": "player",
+            "fx": "skins.default",
+            "gui": "flower-lea.png",
+            "character": "main.flower-lea",
             "guiBounds": {
                 "face": {
                     "x": 44,
