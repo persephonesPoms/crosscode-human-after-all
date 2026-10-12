@@ -18,6 +18,6 @@
 	"dependencies": {
 		"ccloader": "^2.22.0",
 		"crosscode": "^1.0.0",
-		"item-api": "^0.4.5"
+		"item-api": "^0.4.6"
 	}
 }
